@@ -1,96 +1,89 @@
-import { IconGitHub, IconLinkedIn, IconArrowDown } from './Icons.jsx';
+import { IconGitHub, IconLinkedIn, IconArrowDown, IconExternalLink } from './Icons.jsx';
 import './Hero.css';
 
 function Hero() {
   return (
     <section id="home" className="hero" aria-label="Introduction">
-      {/* Background decorative elements */}
-      <div className="hero__bg" aria-hidden="true">
-        <div className="hero__glow hero__glow--1" />
-        <div className="hero__glow hero__glow--2" />
-        <div className="hero__grid" />
-      </div>
-
       <div className="container hero__container">
-        <div className="hero__content">
-          <div className="hero__badge animate-fade-in-up">
-            <span className="hero__badge-dot" />
-            Open to Internship Opportunities
+        {/* Availability Badge */}
+        <div className="hero__status-wrap">
+          <div className="status-pill">
+            <span className="status-dot" />
+            <span>Open to Internship Opportunities · 2025/2026</span>
           </div>
+          <span className="hero__location meta">Cuddalore, TN, India</span>
+        </div>
 
-          <h1 className="hero__title animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            Hi, I&rsquo;m{' '}
-            <span className="hero__name">Mohammed Shafiullah</span>
+        {/* Headline */}
+        <div className="hero__main">
+          <h1 className="hero__title">
+            <span className="hero__name">Mohammed Shafiullah N</span>
+            <span className="hero__role">
+              Aspiring <em>Full Stack Developer</em> &amp; AI Undergraduate
+            </span>
           </h1>
 
-          <p className="hero__subtitle animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Aspiring Full Stack Developer
+          <p className="hero__bio">
+            Pursuing a B.Sc. in Artificial Intelligence at St. Joseph&rsquo;s College of Arts and Science
+            (Autonomous). Passionate about building functional, high-performance web applications,
+            exploring software engineering, and solving real problems through code.
           </p>
 
-          <p className="hero__description animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            A B.Sc. Artificial Intelligence student interested in building web
-            applications and developing practical software engineering skills.
-          </p>
-
-          <div className="hero__actions animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          {/* Action Row */}
+          <div className="hero__actions">
             <a href="#projects" className="btn btn-primary">
-              View My Projects
+              Selected Works
+              <span className="hero__btn-arrow">↓</span>
             </a>
             <a href="#contact" className="btn btn-secondary">
-              Contact Me
+              Get in Touch
+              <span className="hero__btn-arrow">↗</span>
             </a>
-          </div>
-
-          <div className="hero__socials animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <a
-              href="https://github.com/Shafyydev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero__social-link"
-              aria-label="GitHub profile"
-            >
-              <IconGitHub size={22} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/Shafyy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero__social-link"
-              aria-label="LinkedIn profile"
-            >
-              <IconLinkedIn size={22} />
-            </a>
+            <div className="hero__socials">
+              <a
+                href="https://github.com/Shafyydev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero__social-icon"
+                aria-label="GitHub profile"
+                title="GitHub: Shafyydev"
+              >
+                <IconGitHub size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/Shafyy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero__social-icon"
+                aria-label="LinkedIn profile"
+                title="LinkedIn: Shafyy"
+              >
+                <IconLinkedIn size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Decorative code card */}
-        <div className="hero__visual animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="hero__card">
-            <div className="hero__card-header">
-              <span className="hero__card-dot hero__card-dot--red" />
-              <span className="hero__card-dot hero__card-dot--yellow" />
-              <span className="hero__card-dot hero__card-dot--green" />
-              <span className="hero__card-filename">profile.js</span>
-            </div>
-            <pre className="hero__card-code">
-              <code>
-{`const developer = {
-  name: "Mohammed Shafiullah N",
-  title: "Aspiring Full Stack Developer",
-  education: "B.Sc. AI",
-  skills: ["Python", "JavaScript",
-           "React.js", "Node.js"],
-  status: "Open to internships"
-};`}
-              </code>
-            </pre>
+        {/* Technical Spec Sheet Strip */}
+        <div className="hero__specs">
+          <div className="hero__spec-item">
+            <span className="meta">01 / Focus</span>
+            <strong className="hero__spec-value">Full Stack Development</strong>
+          </div>
+          <div className="hero__spec-item">
+            <span className="meta">02 / Degree</span>
+            <strong className="hero__spec-value">B.Sc. Artificial Intelligence</strong>
+          </div>
+          <div className="hero__spec-item">
+            <span className="meta">03 / Timeline</span>
+            <strong className="hero__spec-value">2024 &mdash; 2027 (Undergrad)</strong>
+          </div>
+          <div className="hero__spec-item">
+            <span className="meta">04 / Target</span>
+            <strong className="hero__spec-value">Software Dev Internship</strong>
           </div>
         </div>
       </div>
-
-      <a href="#about" className="hero__scroll" aria-label="Scroll to About section">
-        <IconArrowDown size={20} />
-      </a>
     </section>
   );
 }

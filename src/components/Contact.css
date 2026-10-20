@@ -1,104 +1,160 @@
-/* ===========================
-   Contact Section
-   =========================== */
-.contact {
-  background: var(--bg-secondary);
-}
-
-.contact__header {
-  margin-bottom: var(--space-3xl);
-}
-
-.contact__grid {
+.contact__layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
 }
 
-.contact__card {
+/* Main Email Card */
+.contact__main-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-border);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--space-2xl) var(--space-xl);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  transition: all var(--duration-normal) var(--ease-out);
-  cursor: pointer;
+  gap: var(--space-6);
+  justify-content: space-between;
+  position: relative;
+  transition: border-color 0.25s ease;
 }
 
-.contact__card:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
+.contact__main-card:hover {
+  border-color: rgba(167, 139, 250, 0.4);
 }
 
-.contact__card-icon {
+.contact__main-top {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-lg);
-  transition: transform var(--duration-normal) var(--ease-out);
+  justify-content: space-between;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--rule);
 }
 
-.contact__card:hover .contact__card-icon {
-  transform: scale(1.1);
+.contact__response-time {
+  color: #34d399;
 }
 
-.contact__card-icon--email {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
+.contact__email-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.contact__card-icon--github {
-  background: rgba(124, 106, 246, 0.1);
-  color: var(--accent-primary);
-}
-
-.contact__card-icon--linkedin {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-}
-
-.contact__card-title {
-  font-size: var(--fs-base);
-  font-weight: var(--fw-semibold);
-  color: var(--text-primary);
-  margin-bottom: var(--space-sm);
-}
-
-.contact__card-value {
-  font-size: var(--fs-sm);
-  color: var(--text-secondary);
-  margin-bottom: var(--space-lg);
+.contact__email-link {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  color: var(--ink);
+  letter-spacing: -0.015em;
   word-break: break-all;
+  line-height: 1.25;
+  transition: color 0.2s ease;
 }
 
-.contact__card-action {
+.contact__email-link:hover {
+  color: var(--accent);
+}
+
+.contact__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+}
+
+.contact__copy-btn {
+  gap: var(--space-2);
+}
+
+/* Profiles column */
+.contact__profiles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact__profile-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--paper-border);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex: 1;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.contact__profile-card:hover {
+  border-color: rgba(167, 139, 250, 0.4);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.contact__profile-icon {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
-  color: var(--accent-primary);
-  transition: gap var(--duration-fast);
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--paper-border);
+  color: var(--ink);
+  flex-shrink: 0;
 }
 
-.contact__card:hover .contact__card-action {
-  gap: var(--space-md);
+.contact__profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
 }
 
-/* ===========================
-   Responsive
-   =========================== */
-@media (max-width: 768px) {
-  .contact__grid {
+.contact__profile-title {
+  font-size: var(--text-sm);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.contact__profile-desc {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  line-height: 1.4;
+}
+
+.contact__profile-arrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--ink-faint);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact__profile-card:hover .contact__profile-arrow {
+  transform: translate(2px, -2px);
+  color: var(--accent);
+}
+
+/* Notice */
+.contact__notice {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: var(--space-4) var(--space-5);
+  border: 1px dashed var(--paper-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.contact__notice-text {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+@media (max-width: 860px) {
+  .contact__layout {
     grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
   }
 }

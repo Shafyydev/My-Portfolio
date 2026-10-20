@@ -1,34 +1,68 @@
-import { IconGraduationCap, IconMapPin, IconCalendar } from './Icons.jsx';
+import { IconMapPin, IconCalendar } from './Icons.jsx';
 import './Education.css';
 
 function Education() {
   return (
-    <section id="education" className="education section" aria-label="Education">
+    <section id="education" className="education section" aria-label="Academic Background">
       <div className="container">
-        <div className="education__header">
-          <span className="section-label">Education</span>
-          <h2 className="section-title">Academic Background</h2>
-        </div>
+        <header className="section-header">
+          <span className="section-tag">04 / Academic Foundation</span>
+          <h2 className="section-title">
+            Education &amp; <em>curriculum</em>.
+          </h2>
+          <p className="section-lead">
+            Formal undergraduate studies providing the theoretical and practical foundation
+            for software engineering and intelligent systems.
+          </p>
+        </header>
 
         <div className="education__card">
-          <div className="education__icon-wrap">
-            <IconGraduationCap size={32} />
-          </div>
-
-          <div className="education__details">
-            <h3 className="education__degree">B.Sc. Artificial Intelligence</h3>
-            <p className="education__institution">
-              <IconMapPin size={14} />
-              St. Joseph&rsquo;s College of Arts and Science (Autonomous), Cuddalore, Tamil Nadu, India
-            </p>
-            <p className="education__period">
+          <div className="education__top">
+            <div className="education__period-badge">
               <IconCalendar size={14} />
-              2024 – 2027
-            </p>
+              <span className="font-mono">2024 &mdash; 2027</span>
+            </div>
+            <span className="education__status-badge">Currently Enrolled · In Progress</span>
           </div>
 
-          <div className="education__badge">
-            <span className="education__badge-text">Currently Pursuing</span>
+          <div className="education__main">
+            <div className="education__headings">
+              <h3 className="education__degree">Bachelor of Science in Artificial Intelligence</h3>
+              <p className="education__institution">
+                St. Joseph&rsquo;s College of Arts and Science (Autonomous)
+              </p>
+              <p className="education__location">
+                <IconMapPin size={14} />
+                <span>Cuddalore, Tamil Nadu, India</span>
+              </p>
+            </div>
+
+            <div className="education__narrative">
+              <p className="education__summary">
+                Undergraduate program focused on artificial intelligence fundamentals, algorithmic problem solving,
+                and software engineering methodologies. Complementing the academic syllabus through hands-on
+                development of web applications and desktop computer vision systems.
+              </p>
+
+              <div className="education__focus-grid">
+                <div className="education__focus-item">
+                  <span className="meta">Core Focus 01</span>
+                  <strong className="education__focus-title">AI &amp; Computational Logic</strong>
+                </div>
+                <div className="education__focus-item">
+                  <span className="meta">Core Focus 02</span>
+                  <strong className="education__focus-title">Python &amp; Systems Programming</strong>
+                </div>
+                <div className="education__focus-item">
+                  <span className="meta">Core Focus 03</span>
+                  <strong className="education__focus-title">Relational Databases &amp; SQL</strong>
+                </div>
+                <div className="education__focus-item">
+                  <span className="meta">Core Focus 04</span>
+                  <strong className="education__focus-title">Full Stack Web Architecture</strong>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

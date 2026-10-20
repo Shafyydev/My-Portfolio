@@ -1,99 +1,123 @@
-import { IconGitHub, IconExternalLink, IconFolder } from './Icons.jsx';
+import { IconGitHub, IconExternalLink } from './Icons.jsx';
 import './Projects.css';
 
 const PROJECTS = [
   {
-    title: 'Personal Portfolio Website',
-    type: 'Personal Project',
+    num: '01',
+    title: 'Facial Recognition Attendance System',
+    type: 'Desktop Computer Vision Application',
+    tagline: 'Automated biometric attendance tracking with OpenCV, Flask, and native desktop window.',
     description:
-      'A personal website designed to present my profile, education, technical skills, and projects in a professional format.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Git', 'GitHub'],
-    repoUrl: 'https://github.com/Shafyydev/My-Portfolio',
+      'A desktop attendance application combining computer vision face detection with an embedded web dashboard. It registers students via live webcam capture, matches enrolled facial features in real-time, and logs verified attendance records in a local SQLite database.',
+    features: [
+      'Live camera feed with real-time OpenCV facial landmark detection',
+      'Student registration workflow with multi-angle face sample acquisition',
+      'Multi-frame confirmation threshold to prevent accidental or false triggers',
+      'Local SQLite persistence for enrolled students and timestamped logs',
+      'Embedded Flask dashboard rendered inside a native pywebview desktop window',
+      'Attendance log explorer with CSV export and print-ready summary tables',
+    ],
+    technologies: ['Python', 'Flask', 'OpenCV', 'SQLite', 'pywebview'],
+    repoUrl: 'https://github.com/Shafyydev/face-recognition-attendance-system',
   },
   {
-    title: 'Facial Recognition Attendance System',
-    type: 'Personal Project',
+    num: '02',
+    title: 'Personal Portfolio Website',
+    type: 'Web Application & Design System',
+    tagline: 'Editorial-grade developer portfolio built from scratch with React and Vite.',
     description:
-      'A desktop attendance application that registers students via webcam, recognizes enrolled faces in a live camera feed, and records attendance in SQLite. The user interface is a Flask dashboard displayed in a pywebview desktop window.',
-    technologies: ['Python', 'Flask', 'OpenCV', 'SQLite'],
-    repoUrl: 'https://github.com/Shafyydev/face-recognition-attendance-system',
+      'A bespoke portfolio website engineered to showcase candidate capabilities, academic background, and technical projects for software development internship applications. Built with an editorial design philosophy, custom CSS tokens, and verified facts.',
     features: [
-      'Live camera preview with face detection',
-      'Student registration with webcam face samples',
-      'Multi-frame confirmation before recording attendance',
-      'Attendance history, CSV export, and printable reports',
+      'Bespoke editorial aesthetic featuring DM Serif Display, DM Sans, and JetBrains Mono',
+      'Zero bloated third-party UI libraries — hand-crafted responsive CSS tokens',
+      'Strict factual integrity with zero hallucinated credentials or exaggerated claims',
+      'Accessible drawer navigation, semantic markup, and optimized mobile layouts',
     ],
+    technologies: ['React.js', 'JavaScript', 'CSS3', 'Vite', 'Git', 'GitHub'],
+    repoUrl: 'https://github.com/Shafyydev/My-Portfolio',
   },
 ];
 
 function Projects() {
   return (
-    <section id="projects" className="projects section" aria-label="Projects">
+    <section id="projects" className="projects section" aria-label="Selected Projects">
       <div className="container">
-        <div className="projects__header">
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">Featured Projects</h2>
-          <p className="section-subtitle">
-            Projects I&rsquo;ve built to develop my skills and explore software development.
+        <header className="section-header">
+          <span className="section-tag">03 / Selected Works</span>
+          <h2 className="section-title">
+            Featured <em>engineered</em> projects.
+          </h2>
+          <p className="section-lead">
+            Software systems built from scratch to solve concrete problems and explore
+            full-stack development and computer vision.
           </p>
-        </div>
+        </header>
 
-        <div className="projects__grid">
+        <div className="projects__list">
           {PROJECTS.map((project) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-card__header">
-                <div className="project-card__icon">
-                  <IconFolder size={24} />
+            <article className="project-card" key={project.num}>
+              {/* Top metadata strip */}
+              <div className="project-card__top">
+                <span className="project-card__num meta">{project.num} //</span>
+                <span className="project-card__type meta">{project.type}</span>
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__github-link"
+                    aria-label={`View ${project.title} repository on GitHub`}
+                    title="View GitHub Repository"
+                  >
+                    <IconGitHub size={18} />
+                    <span className="meta">GitHub</span>
+                    <IconExternalLink size={12} />
+                  </a>
+                )}
+              </div>
+
+              {/* Main Content */}
+              <div className="project-card__body">
+                <h3 className="project-card__title">{project.title}</h3>
+                <p className="project-card__tagline">{project.tagline}</p>
+                <p className="project-card__desc">{project.description}</p>
+
+                {/* Features Checklist */}
+                <div className="project-card__features-wrap">
+                  <h4 className="project-card__features-heading meta">Key Architectural Features</h4>
+                  <ul className="project-card__features">
+                    {project.features.map((feat) => (
+                      <li key={feat} className="project-card__feature-item">
+                        <span className="project-card__feature-bullet" aria-hidden="true">↳</span>
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="project-card__links">
+
+                {/* Stack Chips & CTA */}
+                <div className="project-card__footer">
+                  <div className="project-card__tech" aria-label="Technologies used">
+                    {project.technologies.map((tech) => (
+                      <span className="project-card__tech-tag" key={tech}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
                   {project.repoUrl && (
                     <a
                       href={project.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-card__link"
-                      aria-label={`View ${project.title} on GitHub`}
+                      className="btn btn-secondary project-card__cta"
                     >
-                      <IconGitHub size={20} />
+                      Inspect Source
+                      <IconExternalLink size={14} />
                     </a>
                   )}
                 </div>
               </div>
-
-              <span className="project-card__type">{project.type}</span>
-              <h3 className="project-card__title">{project.title}</h3>
-              <p className="project-card__desc">{project.description}</p>
-
-              {project.features && (
-                <ul className="project-card__features">
-                  {project.features.map((feature) => (
-                    <li key={feature}>
-                      <span className="project-card__feature-bullet">▸</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="project-card__tech">
-                {project.technologies.map((tech) => (
-                  <span className="project-card__tech-tag" key={tech}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {project.repoUrl && (
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-card__cta"
-                >
-                  View Repository
-                  <IconExternalLink size={14} />
-                </a>
-              )}
             </article>
           ))}
         </div>

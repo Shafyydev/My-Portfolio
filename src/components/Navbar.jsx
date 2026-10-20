@@ -3,7 +3,6 @@ import { IconMenu, IconClose } from './Icons.jsx';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
@@ -12,121 +11,66 @@ const NAV_LINKS = [
 ];
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Close mobile menu on link click */
-  const handleLinkClick = () => {
-    setIsMobileOpen(false);
-  };
-
-  /* Close mobile menu on Escape key */
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') setIsMobileOpen(false);
-    };
-    if (isMobileOpen) {
-      document.addEventListener('keydown', handleEscape);
+    if (mobileOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+      const onKey = (e) => e.key === 'Escape' && setMobileOpen(false);
+      document.addEventListener('keydown', onKey);
+      return () => {
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onKey);
+      };
     }
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = '';
-    };
-  }, [isMobileOpen]);
+    document.body.style.overflow = '';
+  }, [mobileOpen]);
+
+  const close = () => setMobileOpen(false);
 
   return (
-    <header
-      id="navbar"
-      className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}
-      role="banner"
-    >
-      <nav className="navbar__inner container" aria-label="Primary navigation">
-        <a href="#home" className="navbar__brand" aria-label="Home">
-          <span className="navbar__brand-icon">S</span>
-          <span className="navbar__brand-text">Shafiullah</span>
+    <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`} role="banner">
+      <div className="nav__bar container">
+        <a href="#home" className="nav__wordmark" aria-label="Home">
+          Shafiullah<span className="nav__dot">.</span>
         </a>
 
-        <ul className={`navbar__links ${isMobileOpen ? 'navbar__links--open' : ''}`} role="list">
+        <nav className="nav__links" aria-label="Primary navigation">
           {NAV_LINKS.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="navbar__link"
-                onClick={handleLinkClick}
-              >
-                {label}
-              </a>
-            </li>
+            <a key={href} href={href} className="nav__link">{label}</a>
           ))}
-        </ul>
+        </nav>
 
-        <a
-          href="#contact"
-          className="navbar__cta btn btn-primary"
-          onClick={handleLinkClick}
-        >
-          Get in Touch
+        <a href="mailto:shafyy.officials25@gmail.com" className="nav__cta">
+          Let&rsquo;s talk
         </a>
 
         <button
-          id="mobile-menu-toggle"
-          className="navbar__toggle"
-          onClick={() => setIsMobileOpen((prev) => !prev)}
-          aria-expanded={isMobileOpen}
-          aria-controls="mobile-menu"
-          aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+          className="nav__toggle"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMobileOpen ? <IconClose /> : <IconMenu />}
+          {mobileOpen ? <IconClose /> : <IconMenu />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile overlay */}
-      {isMobileOpen && (
-        <div
-          className="navbar__overlay"
-          onClick={() => setIsMobileOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Mobile menu */}
-      <div
-        id="mobile-menu"
-        className={`navbar__mobile ${isMobileOpen ? 'navbar__mobile--open' : ''}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-      >
-        <ul role="list">
-          {NAV_LINKS.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                className="navbar__mobile-link"
-                onClick={handleLinkClick}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="#contact"
-          className="btn btn-primary navbar__mobile-cta"
-          onClick={handleLinkClick}
-        >
-          Get in Touch
+      {/* Mobile */}
+      {mobileOpen && <div className="nav__scrim" onClick={close} aria-hidden="true" />}
+      <div className={`nav__drawer ${mobileOpen ? 'nav__drawer--open' : ''}`} role="dialog" aria-modal="true">
+        {NAV_LINKS.map(({ label, href }) => (
+          <a key={href} href={href} className="nav__drawer-link" onClick={close}>{label}</a>
+        ))}
+        <hr className="rule" />
+        <a href="mailto:shafyy.officials25@gmail.com" className="nav__drawer-link nav__drawer-link--accent" onClick={close}>
+          Let&rsquo;s talk →
         </a>
       </div>
     </header>

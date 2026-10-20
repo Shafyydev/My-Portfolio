@@ -1,67 +1,69 @@
 import './Skills.css';
 
-const SKILL_CATEGORIES = [
+const SKILL_SECTIONS = [
   {
-    title: 'Languages',
-    skills: [
-      { name: 'Python', icon: '🐍' },
-      { name: 'JavaScript', icon: '⚡' },
-    ],
+    index: '01',
+    category: 'Languages',
+    purpose: 'Core languages for algorithmic logic, scripting, and full-stack development',
+    skills: ['Python', 'JavaScript'],
   },
   {
-    title: 'Frontend',
-    skills: [
-      { name: 'HTML5', icon: '🌐' },
-      { name: 'CSS', icon: '🎨' },
-      { name: 'JavaScript', icon: '⚡' },
-      { name: 'React.js', icon: '⚛️' },
-    ],
+    index: '02',
+    category: 'Frontend',
+    purpose: 'Building responsive, accessible, and structured user interfaces',
+    skills: ['HTML5', 'CSS', 'JavaScript', 'React.js'],
   },
   {
-    title: 'Backend',
-    skills: [
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Python', icon: '🐍' },
-    ],
+    index: '03',
+    category: 'Backend',
+    purpose: 'API routing, server execution, and application business logic',
+    skills: ['Node.js', 'Python'],
   },
   {
-    title: 'Databases',
-    skills: [
-      { name: 'MySQL', icon: '🗄️' },
-      { name: 'PostgreSQL', icon: '🐘' },
-    ],
+    index: '04',
+    category: 'Databases',
+    purpose: 'Relational data modeling, schema design, and querying',
+    skills: ['MySQL', 'PostgreSQL'],
   },
   {
-    title: 'Development Tools',
-    skills: [
-      { name: 'Git', icon: '📦' },
-      { name: 'GitHub', icon: '🐙' },
-    ],
+    index: '05',
+    category: 'Development Tools',
+    purpose: 'Version tracking, collaborative workflows, and repository management',
+    skills: ['Git', 'GitHub'],
   },
 ];
 
 function Skills() {
   return (
-    <section id="skills" className="skills section" aria-label="Technical Skills">
+    <section id="skills" className="skills section" aria-label="Technical Capabilities">
       <div className="container">
-        <div className="skills__header">
-          <span className="section-label">Skills</span>
-          <h2 className="section-title">Technical Skills</h2>
-          <p className="section-subtitle">
-            Technologies and tools I work with to build software projects.
+        <header className="section-header">
+          <span className="section-tag">02 / Technical Index</span>
+          <h2 className="section-title">
+            Verified <em>stack</em> &amp; capabilities.
+          </h2>
+          <p className="section-lead">
+            Languages, libraries, databases, and version control tools I actively work with
+            across academic and independent engineering projects.
           </p>
-        </div>
+        </header>
 
         <div className="skills__grid">
-          {SKILL_CATEGORIES.map((category) => (
-            <div className="skills__card" key={category.title}>
-              <h3 className="skills__card-title">{category.title}</h3>
-              <div className="skills__tags">
-                {category.skills.map((skill) => (
-                  <span className="skills__tag" key={`${category.title}-${skill.name}`}>
-                    <span className="skills__tag-icon">{skill.icon}</span>
-                    {skill.name}
-                  </span>
+          {SKILL_SECTIONS.map((section) => (
+            <div className="skills__card" key={section.category}>
+              <div className="skills__card-top">
+                <span className="skills__index meta">{section.index} //</span>
+                <h3 className="skills__category">{section.category}</h3>
+              </div>
+
+              <p className="skills__purpose">{section.purpose}</p>
+
+              <div className="skills__pills" role="list" aria-label={`${section.category} skills`}>
+                {section.skills.map((skill) => (
+                  <div className="skills__pill" key={`${section.category}-${skill}`} role="listitem">
+                    <span className="skills__pill-dot" aria-hidden="true" />
+                    <span className="skills__pill-name">{skill}</span>
+                  </div>
                 ))}
               </div>
             </div>
