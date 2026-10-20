@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import FocusAreas from './components/FocusAreas.jsx';
 import About from './components/About.jsx';
 import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <FocusAreas />
         <About />
         <Skills />
         <Projects />

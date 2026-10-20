@@ -1,0 +1,207 @@
+.df-focus {
+  position: relative;
+  border-top: 1px solid var(--card-border);
+}
+
+.df-focus__bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.df-focus__bento-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 340px;
+}
+
+.df-focus__card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--blue-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.df-focus__card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+.df-focus__card-desc {
+  font-size: 0.925rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* Widget 1: Graph */
+.df-focus__widget-graph {
+  background: var(--card-raised);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-inner);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.df-focus__graph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.df-focus__graph-stat {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.df-focus__graph-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-dot);
+  background: rgba(52, 211, 153, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.df-focus__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  height: 60px;
+  padding: 0.25rem 0;
+}
+
+.df-focus__bar {
+  flex: 1;
+  background: rgba(0, 114, 176, 0.35);
+  border-radius: 4px;
+  transition: height 0.3s ease;
+}
+
+.df-focus__bar--active {
+  background: var(--blue-accent);
+  box-shadow: 0 0 12px var(--blue-glow);
+}
+
+.df-focus__graph-footer {
+  font-size: 0.775rem;
+  color: var(--text-faint);
+}
+
+/* Widget 2: Activity List */
+.df-focus__activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.df-focus__activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--card-raised);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-inner);
+  padding: 0.75rem 1rem;
+}
+
+.df-focus__activity-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+.df-focus__activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.df-focus__activity-info strong {
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.df-focus__activity-info span {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* Widget 3: Chat bubbles */
+.df-focus__chat-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.df-focus__chat-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.df-focus__chat-msg--right {
+  justify-content: flex-end;
+}
+
+.df-focus__chat-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #333333;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.df-focus__chat-avatar--user {
+  background: var(--blue-accent);
+}
+
+.df-focus__chat-text {
+  font-size: 0.825rem;
+  line-height: 1.4;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
+  background: var(--card-raised);
+  border: 1px solid var(--card-border);
+  color: var(--text-white);
+  max-width: 80%;
+}
+
+.df-focus__chat-msg--right .df-focus__chat-text {
+  background: rgba(0, 114, 176, 0.15);
+  border-color: rgba(0, 114, 176, 0.3);
+}
+
+@media (max-width: 960px) {
+  .df-focus__bento {
+    grid-template-columns: 1fr;
+  }
+  .df-focus__bento-card {
+    min-height: auto;
+  }
+}

@@ -32,7 +32,7 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Layout */
-  --max-w: 1200px;
+  --max-w: 1320px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
   --nav-h: 74px;
 }

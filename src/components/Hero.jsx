@@ -1,9 +1,16 @@
-import { IconGitHub, IconLinkedIn, IconExternalLink } from './Icons.jsx';
+import { IconGitHub, IconLinkedIn } from './Icons.jsx';
 import './Hero.css';
 
 function Hero() {
   return (
     <section id="home" className="df-hero" aria-label="Introduction">
+      {/* 3D Perspective Grid Background (DesignFast signature style) */}
+      <div className="df-hero__grid-wrapper" aria-hidden="true">
+        <div className="df-hero__glow-primary" />
+        <div className="df-hero__glow-secondary" />
+        <div className="df-hero__grid-plane" />
+      </div>
+
       <div className="container df-hero__container">
         {/* Top Centered Header */}
         <div className="df-hero__header">
@@ -63,85 +70,25 @@ function Hero() {
             </span>
           </div>
         </div>
-
-        {/* 3 Bento Feature Cards (Exact DesignFast Bento Pattern) */}
-        <div className="df-hero__bento">
-          {/* Card 1: Intelligent Systems */}
-          <div className="df-card df-hero__bento-card">
-            <div className="df-hero__card-content">
-              <h3 className="df-hero__card-title">Computer Vision &amp; AI</h3>
-              <p className="df-hero__card-desc">
-                Building practical applications with OpenCV facial detection and SQLite tracking.
-              </p>
-            </div>
-            {/* Visual widget */}
-            <div className="df-hero__widget-graph" aria-hidden="true">
-              <div className="df-hero__graph-header">
-                <span className="df-hero__graph-stat">Live Detection</span>
-                <span className="df-hero__graph-badge">Verified</span>
-              </div>
-              <div className="df-hero__bars">
-                <span className="df-hero__bar" style={{ height: '40%' }} />
-                <span className="df-hero__bar" style={{ height: '65%' }} />
-                <span className="df-hero__bar" style={{ height: '50%' }} />
-                <span className="df-hero__bar" style={{ height: '85%' }} />
-                <span className="df-hero__bar df-hero__bar--active" style={{ height: '100%' }} />
-              </div>
-              <div className="df-hero__graph-footer">
-                <span>Multi-frame recognition algorithm</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Development Pipeline */}
-          <div className="df-card df-hero__bento-card">
-            <div className="df-hero__card-content">
-              <h3 className="df-hero__card-title">Full Stack Tooling</h3>
-              <p className="df-hero__card-desc">
-                Developing responsive web interfaces and server architectures.
-              </p>
-            </div>
-            {/* Activity list widget */}
-            <div className="df-hero__activity-list" aria-hidden="true">
-              <div className="df-hero__activity-item">
-                <div className="df-hero__activity-icon">PY</div>
-                <div className="df-hero__activity-info">
-                  <strong>Facial Attendance System</strong>
-                  <span>Python &middot; Flask &middot; OpenCV</span>
-                </div>
-              </div>
-              <div className="df-hero__activity-item">
-                <div className="df-hero__activity-icon">RE</div>
-                <div className="df-hero__activity-info">
-                  <strong>Portfolio Website</strong>
-                  <span>React.js &middot; JavaScript &middot; CSS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3: Internship Ready */}
-          <div className="df-card df-hero__bento-card">
-            <div className="df-hero__card-content">
-              <h3 className="df-hero__card-title">Internship Ready</h3>
-              <p className="df-hero__card-desc">
-                Seeking a software development internship to gain real production experience.
-              </p>
-            </div>
-            {/* Chat bubble collaboration widget */}
-            <div className="df-hero__chat-widget" aria-hidden="true">
-              <div className="df-hero__chat-msg df-hero__chat-msg--left">
-                <span className="df-hero__chat-avatar">HR</span>
-                <p className="df-hero__chat-text">Seeking developer interns for software development?</p>
-              </div>
-              <div className="df-hero__chat-msg df-hero__chat-msg--right">
-                <p className="df-hero__chat-text">Yes, excited to collaborate and build together!</p>
-                <span className="df-hero__chat-avatar df-hero__chat-avatar--user">SN</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* Scroll indicator pointing to the next section */}
+      <a href="#focus" className="df-hero__scroll-indicator" aria-label="Scroll to explore">
+        <span>Scroll to explore</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </a>
     </section>
   );
 }
