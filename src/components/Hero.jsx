@@ -1,4 +1,3 @@
-import { IconGitHub, IconLinkedIn } from './Icons.jsx';
 import './Hero.css';
 
 function Hero() {
@@ -14,11 +13,6 @@ function Hero() {
       <div className="container df-hero__container">
         {/* Top Centered Header */}
         <div className="df-hero__header">
-          <div className="section-badge">
-            <span className="section-badge__dot" />
-            <span>Open for Internship Opportunities &middot; 2025/2026</span>
-          </div>
-
           <h1 className="df-hero__title">
             Mohammed Shafiullah N
             <span className="df-hero__role">
@@ -39,35 +33,6 @@ function Hero() {
             <a href="#contact" className="btn-pill-dark">
               Get in Touch
             </a>
-            <div className="df-hero__socials">
-              <a
-                href="https://github.com/Shafyydev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="df-hero__social-btn"
-                aria-label="GitHub profile"
-                title="GitHub: Shafyydev"
-              >
-                <IconGitHub size={18} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/Shafyy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="df-hero__social-btn"
-                aria-label="LinkedIn profile"
-                title="LinkedIn: Shafyy"
-              >
-                <IconLinkedIn size={18} />
-              </a>
-            </div>
-          </div>
-
-          {/* College Sub-Bar */}
-          <div className="df-hero__trust-strip">
-            <span className="df-hero__trust-text">
-              St. Joseph&rsquo;s College of Arts and Science (Autonomous), Cuddalore &middot; 2024&ndash;2027
-            </span>
           </div>
         </div>
       </div>

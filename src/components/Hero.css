@@ -90,7 +90,6 @@
   line-height: 1.08;
   letter-spacing: -0.04em;
   color: var(--text-white);
-  margin-top: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
@@ -115,47 +114,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.85rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.df-hero__socials {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.df-hero__social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.df-hero__social-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.df-hero__trust-strip {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  width: 100%;
-}
-
-.df-hero__trust-text {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-faint);
-  letter-spacing: -0.01em;
 }
 
 /* Scroll indicator */
