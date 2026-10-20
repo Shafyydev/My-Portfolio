@@ -2,92 +2,88 @@ import './About.css';
 
 function About() {
   return (
-    <section id="about" className="about section" aria-label="About Mohammed Shafiullah">
+    <section id="about" className="section df-about" aria-label="About Me">
       <div className="container">
-        <header className="section-header">
-          <span className="section-tag">01 / Background</span>
+        {/* Section Header */}
+        <div className="df-about__header">
+          <div className="section-badge">
+            <span className="section-badge__dot" />
+            <span>About Me</span>
+          </div>
           <h2 className="section-title">
-            Rooted in AI, <em>engineering</em> for the web.
+            Driven by AI foundations, engineering for the web.
           </h2>
-          <p className="section-lead">
-            An undergraduate developer focused on bridging artificial intelligence fundamentals
-            with modern, full-stack software development.
+          <p className="section-subtitle">
+            An aspiring developer building real-world software, exploring full-stack engineering,
+            and preparing for practical industry impact.
           </p>
-        </header>
+        </div>
 
-        <div className="about__layout">
-          {/* Narrative Column */}
-          <div className="about__narrative">
-            <p className="about__p">
-              I am pursuing a <strong>B.Sc. in Artificial Intelligence</strong> at{' '}
-              <em>St. Joseph&rsquo;s College of Arts and Science (Autonomous)</em>, Cuddalore (2024&ndash;2027).
-              My focus lies at the intersection of AI concepts and practical software development.
+        {/* Bento Grid */}
+        <div className="df-about__grid">
+          {/* Main Narrative Card */}
+          <div className="df-card df-about__narrative-card">
+            <h3 className="df-about__card-heading">Background &amp; Philosophy</h3>
+            <p className="df-about__text">
+              I am currently pursuing a <strong>B.Sc. in Artificial Intelligence</strong> at{' '}
+              <strong>St. Joseph&rsquo;s College of Arts and Science (Autonomous)</strong>, Cuddalore (2024&ndash;2027).
+              My academic curriculum grounds me in artificial intelligence foundations, algorithmic thinking, and computational logic.
             </p>
-            <p className="about__p">
-              Rather than theoretical-only study, I believe in learning by constructing actual systems.
-              From building desktop attendance systems that integrate <strong>OpenCV</strong> facial recognition
-              with Flask and SQLite, to architecting clean web applications with <strong>React</strong> and <strong>Node.js</strong>,
-              I spend my time strengthening my programming foundation.
+            <p className="df-about__text">
+              Beyond the classroom, I focus on full-stack web development. I believe in hands-on building:
+              from desktop attendance applications integrating <strong>OpenCV</strong> facial recognition with
+              Flask and SQLite, to responsive modern interfaces built with <strong>React.js</strong> and <strong>Node.js</strong>.
             </p>
-            <p className="about__p">
-              I am actively seeking a <strong>Software Development Internship</strong> where I can contribute to
-              real production challenges, learn under experienced engineers, and continue progressing toward a
-              Full Stack Developer career.
+            <p className="df-about__text">
+              My immediate objective is to obtain a <strong>Software Development Internship</strong> where I can collaborate
+              with seasoned engineers, contribute to real production codebases, and accelerate my progression toward a full-time
+              Full Stack Developer role.
             </p>
 
-            <div className="about__links">
-              <a href="#skills" className="about__inline-link">
-                View Technical Capabilities <span>→</span>
+            <div className="df-about__actions">
+              <a href="#skills" className="btn-pill-white">
+                View Technical Skills &rarr;
               </a>
-              <a href="#projects" className="about__inline-link">
-                Explore Selected Projects <span>→</span>
+              <a href="#projects" className="btn-pill-dark">
+                Explore Projects
               </a>
             </div>
           </div>
 
-          {/* Profile Spec Sheet */}
-          <aside className="about__spec-card" aria-label="Profile Specifications">
-            <div className="about__spec-header">
-              <span className="meta">Candidate Dossier</span>
-              <span className="about__spec-status">Active Student</span>
-            </div>
-
-            <dl className="about__spec-list">
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Full Name</dt>
-                <dd className="about__spec-val">Mohammed Shafiullah N</dd>
+          {/* Profile Specs Card */}
+          <div className="df-card df-about__specs-card">
+            <h3 className="df-about__card-heading">Profile Specifications</h3>
+            
+            <div className="df-about__specs-list">
+              <div className="df-about__spec-item">
+                <span className="df-about__spec-label">Degree</span>
+                <strong className="df-about__spec-value">B.Sc. Artificial Intelligence</strong>
               </div>
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Target Role</dt>
-                <dd className="about__spec-val">Software Development Intern / Full Stack</dd>
-              </div>
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Degree</dt>
-                <dd className="about__spec-val">B.Sc. Artificial Intelligence</dd>
-              </div>
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Institution</dt>
-                <dd className="about__spec-val">
+              <div className="df-about__spec-item">
+                <span className="df-about__spec-label">Institution</span>
+                <strong className="df-about__spec-value">
                   St. Joseph&rsquo;s College of Arts and Science (Autonomous)
-                </dd>
+                </strong>
               </div>
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Location</dt>
-                <dd className="about__spec-val">Cuddalore, Tamil Nadu, India</dd>
+              <div className="df-about__spec-item">
+                <span className="df-about__spec-label">Location</span>
+                <strong className="df-about__spec-value">Cuddalore, Tamil Nadu, India</strong>
               </div>
-              <div className="about__spec-row">
-                <dt className="about__spec-label">Timeline</dt>
-                <dd className="about__spec-val font-mono">2024 &mdash; 2027</dd>
+              <div className="df-about__spec-item">
+                <span className="df-about__spec-label">Tenure</span>
+                <strong className="df-about__spec-value font-mono">2024 &mdash; 2027 (Undergraduate)</strong>
               </div>
-            </dl>
-
-            <div className="about__spec-footer">
-              <span className="meta">Status</span>
-              <p className="about__spec-callout">
-                Available for Summer &amp; Ongoing Internships
-              </p>
+              <div className="df-about__spec-item">
+                <span className="df-about__spec-label">Target Role</span>
+                <strong className="df-about__spec-value">Software Development Internship</strong>
+              </div>
             </div>
-          </aside>
+
+            <div className="df-about__status-box">
+              <span className="df-about__status-dot" />
+              <span>Available for Summer &amp; Ongoing Internships</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

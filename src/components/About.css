@@ -1,157 +1,120 @@
-.about__layout {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(2.5rem, 5vw, 4.5rem);
-  align-items: start;
-}
-
-.about__narrative {
+.df-about__header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-}
-
-.about__p {
-  font-size: clamp(1rem, 1.25vw, 1.125rem);
-  line-height: 1.75;
-  color: var(--ink-muted);
-}
-
-.about__p strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.about__p em {
-  font-style: normal;
-  color: var(--ink);
-}
-
-.about__links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  padding-top: var(--space-4);
-}
-
-.about__inline-link {
-  display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--accent);
-  width: fit-content;
-  transition: transform 0.2s ease, color 0.2s ease;
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.about__inline-link span {
-  transition: transform 0.2s ease;
+.df-about__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
-.about__inline-link:hover {
+.df-about__narrative-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
+
+.df-about__card-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #ffffff;
 }
 
-.about__inline-link:hover span {
-  transform: translateX(4px);
+.df-about__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
-/* Dossier spec card */
-.about__spec-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--paper-border);
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  position: relative;
+.df-about__text strong {
+  color: #ffffff;
+  font-weight: 500;
 }
 
-.about__spec-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, transparent 80%);
-}
-
-.about__spec-header {
+.df-about__actions {
   display: flex;
   align-items: center;
+  gap: 0.85rem;
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Specs Card */
+.df-about__specs-card {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--rule);
+  gap: 1.75rem;
 }
 
-.about__spec-status {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: #34d399;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.about__spec-list {
+.df-about__specs-list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: 1.25rem;
 }
 
-.about__spec-row {
+.df-about__spec-item {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid rgba(30, 30, 40, 0.6);
+  gap: 0.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.about__spec-row:last-child {
+.df-about__spec-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.about__spec-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
+.df-about__spec-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-faint);
   text-transform: uppercase;
-  color: var(--ink-faint);
+  letter-spacing: 0.05em;
 }
 
-.about__spec-val {
-  font-size: var(--text-sm);
-  color: var(--ink);
+.df-about__spec-value {
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.5;
+  color: #ffffff;
 }
 
-.about__spec-val.font-mono {
+.df-about__spec-value.font-mono {
   font-family: var(--font-mono);
 }
 
-.about__spec-footer {
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--rule);
+.df-about__status-box {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-inner);
+  background: rgba(52, 211, 153, 0.06);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--green-dot);
 }
 
-.about__spec-callout {
-  font-size: var(--text-sm);
-  color: var(--accent);
-  font-weight: 500;
+.df-about__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-dot);
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.6);
+  flex-shrink: 0;
 }
 
 @media (max-width: 860px) {
-  .about__layout {
+  .df-about__grid {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
   }
 }

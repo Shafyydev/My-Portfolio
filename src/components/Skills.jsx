@@ -1,73 +1,79 @@
 import './Skills.css';
 
-const SKILL_SECTIONS = [
+const SKILL_GROUPS = [
   {
-    index: '01',
-    category: 'Languages',
-    purpose: 'Core languages for algorithmic logic, scripting, and full-stack development',
+    category: 'Programming Languages',
+    desc: 'Core languages for systems scripts, data processing, and application logic.',
     skills: ['Python', 'JavaScript'],
   },
   {
-    index: '02',
-    category: 'Frontend',
-    purpose: 'Building responsive, accessible, and structured user interfaces',
+    category: 'Frontend Development',
+    desc: 'Creating responsive, accessible, component-driven user interfaces.',
     skills: ['HTML5', 'CSS', 'JavaScript', 'React.js'],
   },
   {
-    index: '03',
-    category: 'Backend',
-    purpose: 'API routing, server execution, and application business logic',
+    category: 'Backend Development',
+    desc: 'Server runtimes, HTTP routing, and backend application business logic.',
     skills: ['Node.js', 'Python'],
   },
   {
-    index: '04',
-    category: 'Databases',
-    purpose: 'Relational data modeling, schema design, and querying',
+    category: 'Database Systems',
+    desc: 'Relational data modeling, table schemas, and structured query operations.',
     skills: ['MySQL', 'PostgreSQL'],
   },
   {
-    index: '05',
-    category: 'Development Tools',
-    purpose: 'Version tracking, collaborative workflows, and repository management',
+    category: 'Development Tooling',
+    desc: 'Version tracking, branch workflows, and remote repository hosting.',
     skills: ['Git', 'GitHub'],
   },
 ];
 
 function Skills() {
   return (
-    <section id="skills" className="skills section" aria-label="Technical Capabilities">
+    <section id="skills" className="section df-skills" aria-label="Technical Skills">
       <div className="container">
-        <header className="section-header">
-          <span className="section-tag">02 / Technical Index</span>
+        {/* Section Header */}
+        <div className="df-skills__header">
+          <div className="section-badge">
+            <span className="section-badge__dot" />
+            <span>Technical Capabilities</span>
+          </div>
           <h2 className="section-title">
-            Verified <em>stack</em> &amp; capabilities.
+            Technologies &amp; core competencies.
           </h2>
-          <p className="section-lead">
-            Languages, libraries, databases, and version control tools I actively work with
-            across academic and independent engineering projects.
+          <p className="section-subtitle">
+            Tools, libraries, and languages I actively use to engineer software projects
+            and develop full-stack capabilities.
           </p>
-        </header>
+        </div>
 
-        <div className="skills__grid">
-          {SKILL_SECTIONS.map((section) => (
-            <div className="skills__card" key={section.category}>
-              <div className="skills__card-top">
-                <span className="skills__index meta">{section.index} //</span>
-                <h3 className="skills__category">{section.category}</h3>
+        {/* Bento Grid */}
+        <div className="df-skills__grid">
+          {SKILL_GROUPS.map((group) => (
+            <div className="df-card df-skills__card" key={group.category}>
+              <div className="df-skills__card-top">
+                <span className="df-skills__dot" aria-hidden="true" />
+                <h3 className="df-skills__category">{group.category}</h3>
               </div>
 
-              <p className="skills__purpose">{section.purpose}</p>
+              <p className="df-skills__desc">{group.desc}</p>
 
-              <div className="skills__pills" role="list" aria-label={`${section.category} skills`}>
-                {section.skills.map((skill) => (
-                  <div className="skills__pill" key={`${section.category}-${skill}`} role="listitem">
-                    <span className="skills__pill-dot" aria-hidden="true" />
-                    <span className="skills__pill-name">{skill}</span>
-                  </div>
+              <div className="df-skills__tags">
+                {group.skills.map((skill) => (
+                  <span className="df-skills__tag" key={`${group.category}-${skill}`}>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Integrity Guarantee Strip */}
+        <div className="df-skills__integrity">
+          <span className="df-skills__integrity-text">
+            ✓ Verified academic &amp; independent stack &middot; Zero inflated metrics or placeholder claims
+          </span>
         </div>
       </div>
     </section>

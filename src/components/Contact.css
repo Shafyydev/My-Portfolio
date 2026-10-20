@@ -1,160 +1,187 @@
-.contact__layout {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: stretch;
-}
-
-/* Main Email Card */
-.contact__main-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--paper-border);
-  padding: clamp(1.75rem, 4vw, 2.75rem);
+.df-contact__banner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
   position: relative;
-  transition: border-color 0.25s ease;
+  overflow: hidden;
+  border-radius: var(--radius-card);
 }
 
-.contact__main-card:hover {
-  border-color: rgba(167, 139, 250, 0.4);
+.df-contact__glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(0, 114, 176, 0.18) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.contact__main-top {
+.df-contact__title {
+  font-size: clamp(2rem, 4.25vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 720px;
+  margin-bottom: 1rem;
+}
+
+.df-contact__desc {
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+
+.df-contact__desc strong {
+  color: #ffffff;
+}
+
+/* Email Box */
+.df-contact__email-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--rule);
-}
-
-.contact__response-time {
-  color: #34d399;
-}
-
-.contact__email-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.contact__email-link {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
-  color: var(--ink);
-  letter-spacing: -0.015em;
-  word-break: break-all;
-  line-height: 1.25;
-  transition: color 0.2s ease;
-}
-
-.contact__email-link:hover {
-  color: var(--accent);
-}
-
-.contact__actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
+  gap: 1.5rem;
+  background: var(--card-raised);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-inner);
+  padding: 1.25rem 1.75rem;
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--rule);
 }
 
-.contact__copy-btn {
-  gap: var(--space-2);
-}
-
-/* Profiles column */
-.contact__profiles {
+.df-contact__email-info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  align-items: flex-start;
+  gap: 0.25rem;
 }
 
-.contact__profile-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--paper-border);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+.df-contact__email-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.df-contact__email-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.df-contact__email-link:hover {
+  color: var(--blue-accent);
+}
+
+.df-contact__email-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  flex: 1;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
-.contact__profile-card:hover {
-  border-color: rgba(167, 139, 250, 0.4);
-  background: var(--accent-dim);
-  transform: translateY(-2px);
+.df-contact__copy-btn {
+  padding: 0.65rem 1.2rem;
+  font-size: 0.85rem;
 }
 
-.contact__profile-icon {
-  display: inline-flex;
+/* Social Profiles */
+.df-contact__profiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.df-contact__profile-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: var(--card-raised);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-inner);
+  padding: 1rem 1.25rem;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.df-contact__profile-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: #191919;
+  transform: translateY(-1px);
+}
+
+.df-contact__profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--paper-border);
-  color: var(--ink);
+  color: #ffffff;
   flex-shrink: 0;
 }
 
-.contact__profile-info {
+.df-contact__profile-details {
   display: flex;
   flex-direction: column;
   gap: 2px;
   flex: 1;
 }
 
-.contact__profile-title {
-  font-size: var(--text-sm);
-  color: var(--ink);
+.df-contact__profile-details strong {
+  font-size: 0.9rem;
   font-weight: 500;
+  color: #ffffff;
 }
 
-.contact__profile-desc {
-  font-size: var(--text-xs);
-  color: var(--ink-faint);
-  line-height: 1.4;
+.df-contact__profile-details span {
+  font-size: 0.775rem;
+  color: var(--text-faint);
 }
 
-.contact__profile-arrow {
-  font-family: var(--font-mono);
-  font-size: var(--text-lg);
-  color: var(--ink-faint);
+.df-contact__arrow {
+  color: var(--text-faint);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.contact__profile-card:hover .contact__profile-arrow {
+.df-contact__profile-card:hover .df-contact__arrow {
+  color: #ffffff;
   transform: translate(2px, -2px);
-  color: var(--accent);
 }
 
-/* Notice */
-.contact__notice {
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding: var(--space-4) var(--space-5);
-  border: 1px dashed var(--paper-border);
-  border-radius: 4px;
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-3);
-  flex-wrap: wrap;
+.df-contact__location-notice {
+  font-size: 0.825rem;
+  color: var(--text-faint);
 }
 
-.contact__notice-text {
-  font-size: var(--text-sm);
-  color: var(--ink-muted);
-}
-
-@media (max-width: 860px) {
-  .contact__layout {
+@media (max-width: 680px) {
+  .df-contact__email-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .df-contact__email-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .df-contact__email-actions > * {
+    flex: 1;
+  }
+  .df-contact__profiles {
     grid-template-columns: 1fr;
   }
 }

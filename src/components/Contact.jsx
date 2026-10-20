@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IconMail, IconGitHub, IconLinkedIn, IconExternalLink, IconCheck } from './Icons.jsx';
+import { IconMail, IconGitHub, IconLinkedIn, IconCheck, IconExternalLink } from './Icons.jsx';
 import './Contact.css';
 
 function Contact() {
@@ -13,103 +13,98 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact section" aria-label="Contact Information">
+    <section id="contact" className="section df-contact" aria-label="Contact Information">
       <div className="container">
-        <header className="section-header">
-          <span className="section-tag">05 / Inquiries &amp; Outreach</span>
-          <h2 className="section-title">
-            Let&rsquo;s start a <em>conversation</em>.
+        {/* DesignFast Large CTA Banner */}
+        <div className="df-card df-contact__banner">
+          <div className="df-contact__glow" aria-hidden="true" />
+
+          <div className="section-badge">
+            <span className="section-badge__dot" />
+            <span>Get in Touch</span>
+          </div>
+
+          <h2 className="df-contact__title">
+            Let&rsquo;s build something exceptional together.
           </h2>
-          <p className="section-lead">
-            I am actively interviewing for software development internship opportunities.
-            Whether you have an opening, project feedback, or want to connect — I welcome your message.
+
+          <p className="df-contact__desc">
+            Currently seeking a <strong>Software Development Internship</strong> for 2025/2026.
+            If you have an internship opening, feedback on my projects, or want to discuss full-stack engineering,
+            reach out directly through any of the channels below.
           </p>
-        </header>
 
-        <div className="contact__layout">
-          {/* Main Direct Email Card */}
-          <div className="contact__main-card">
-            <div className="contact__main-top">
-              <span className="meta">Primary Communication Channel</span>
-              <span className="contact__response-time meta">Direct Dispatch</span>
-            </div>
-
-            <div className="contact__email-block">
-              <span className="contact__email-label meta">Email Address</span>
-              <a href={`mailto:${email}`} className="contact__email-link">
+          {/* Email Box */}
+          <div className="df-contact__email-box">
+            <div className="df-contact__email-info">
+              <span className="df-contact__email-label">Direct Communication</span>
+              <a href={`mailto:${email}`} className="df-contact__email-link">
                 {email}
               </a>
             </div>
 
-            <div className="contact__actions">
-              <a href={`mailto:${email}`} className="btn btn-primary">
+            <div className="df-contact__email-actions">
+              <a href={`mailto:${email}`} className="btn-pill-white">
                 <IconMail size={16} />
-                Compose Message
+                <span>Compose Email &rarr;</span>
               </a>
               <button
                 type="button"
-                className="btn btn-secondary contact__copy-btn"
                 onClick={handleCopy}
+                className="btn-pill-dark df-contact__copy-btn"
                 aria-live="polite"
               >
                 {copied ? (
                   <>
                     <IconCheck size={16} />
-                    Copied to Clipboard
+                    <span>Copied!</span>
                   </>
                 ) : (
-                  'Copy Address'
+                  <span>Copy Address</span>
                 )}
               </button>
             </div>
           </div>
 
-          {/* Social Profiles Column */}
-          <div className="contact__profiles">
-            {/* GitHub Card */}
+          {/* Social Links Row */}
+          <div className="df-contact__profiles">
             <a
               href="https://github.com/Shafyydev"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact__profile-card"
+              className="df-contact__profile-card"
             >
-              <div className="contact__profile-icon">
+              <div className="df-contact__profile-icon">
                 <IconGitHub size={22} />
               </div>
-              <div className="contact__profile-info">
-                <span className="meta">Version Control</span>
-                <strong className="contact__profile-title">github.com/Shafyydev</strong>
-                <span className="contact__profile-desc">Explore public repositories and source code</span>
+              <div className="df-contact__profile-details">
+                <strong>GitHub Profile</strong>
+                <span>@Shafyydev &middot; Inspect repositories</span>
               </div>
-              <span className="contact__profile-arrow" aria-hidden="true">↗</span>
+              <IconExternalLink size={14} className="df-contact__arrow" />
             </a>
 
-            {/* LinkedIn Card */}
             <a
               href="https://www.linkedin.com/in/Shafyy"
               target="_blank"
               rel="noopener noreferrer"
-              className="contact__profile-card"
+              className="df-contact__profile-card"
             >
-              <div className="contact__profile-icon">
+              <div className="df-contact__profile-icon">
                 <IconLinkedIn size={22} />
               </div>
-              <div className="contact__profile-info">
-                <span className="meta">Professional Network</span>
-                <strong className="contact__profile-title">linkedin.com/in/Shafyy</strong>
-                <span className="contact__profile-desc">Connect and view academic background</span>
+              <div className="df-contact__profile-details">
+                <strong>LinkedIn Network</strong>
+                <span>@Shafyy &middot; Professional profile</span>
               </div>
-              <span className="contact__profile-arrow" aria-hidden="true">↗</span>
+              <IconExternalLink size={14} className="df-contact__arrow" />
             </a>
           </div>
-        </div>
 
-        {/* Location & Relocation notice */}
-        <div className="contact__notice">
-          <span className="meta">Location &amp; Availability:</span>
-          <p className="contact__notice-text">
-            Based in Cuddalore, Tamil Nadu, India. Open to remote internships as well as in-person or hybrid roles.
-          </p>
+          {/* Location & Status Notice */}
+          <div className="df-contact__location-notice">
+            <span>&bull; Based in Cuddalore, Tamil Nadu, India &middot; Open to remote, hybrid, and on-site internship positions</span>
+          </div>
         </div>
       </div>
     </section>

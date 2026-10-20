@@ -9,79 +9,78 @@ function Footer() {
   };
 
   return (
-    <footer className="footer" role="contentinfo">
+    <footer className="df-footer" role="contentinfo">
       <div className="container">
-        <div className="footer__top">
-          {/* Colophon & Candidate Identity */}
-          <div className="footer__brand">
-            <a href="#home" className="footer__wordmark">
-              Shafiullah<span className="footer__dot">.</span>
+        <div className="df-footer__top">
+          {/* Brand */}
+          <div className="df-footer__brand">
+            <a href="#home" className="df-footer__logo">
+              <span className="df-footer__logo-icon">S</span>
+              <span className="df-footer__logo-text">Shafiullah</span>
             </a>
-            <p className="footer__role">
-              Mohammed Shafiullah N &mdash; Aspiring Full Stack Developer
+            <p className="df-footer__role">
+              Aspiring Full Stack Developer &middot; B.Sc. Artificial Intelligence
             </p>
-            <p className="footer__degree meta">
-              B.Sc. Artificial Intelligence (2024&ndash;2027) &middot; St. Joseph&rsquo;s College, Cuddalore
+            <p className="df-footer__college">
+              St. Joseph&rsquo;s College of Arts and Science (Autonomous), Cuddalore (2024&ndash;2027)
             </p>
           </div>
 
-          {/* Quick Nav */}
-          <div className="footer__nav-group">
-            <span className="meta">Index</span>
-            <nav className="footer__links" aria-label="Footer Navigation">
-              <a href="#about" className="footer__link">About</a>
-              <a href="#skills" className="footer__link">Skills</a>
-              <a href="#projects" className="footer__link">Projects</a>
-              <a href="#education" className="footer__link">Education</a>
-              <a href="#contact" className="footer__link">Contact</a>
-            </nav>
+          {/* Links Column */}
+          <div className="df-footer__nav">
+            <span className="df-footer__nav-title">Navigation</span>
+            <div className="df-footer__links">
+              <a href="#home" className="df-footer__link">Home</a>
+              <a href="#about" className="df-footer__link">About</a>
+              <a href="#skills" className="df-footer__link">Skills</a>
+              <a href="#projects" className="df-footer__link">Projects</a>
+              <a href="#education" className="df-footer__link">Education</a>
+              <a href="#contact" className="df-footer__link">Contact</a>
+            </div>
           </div>
 
-          {/* Connect Links */}
-          <div className="footer__nav-group">
-            <span className="meta">Connect</span>
-            <div className="footer__links">
+          {/* Connect Column */}
+          <div className="df-footer__nav">
+            <span className="df-footer__nav-title">Connect</span>
+            <div className="df-footer__links">
               <a
                 href="https://github.com/Shafyydev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__link"
+                className="df-footer__link"
               >
-                GitHub ↗
+                GitHub &rarr;
               </a>
               <a
                 href="https://www.linkedin.com/in/Shafyy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__link"
+                className="df-footer__link"
               >
-                LinkedIn ↗
+                LinkedIn &rarr;
               </a>
               <a
                 href="mailto:shafyy.officials25@gmail.com"
-                className="footer__link"
+                className="df-footer__link"
               >
-                Email ↗
+                Email &rarr;
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="footer__bottom">
-          <p className="footer__copyright meta">
-            &copy; {currentYear} Mohammed Shafiullah N. All rights reserved.
-          </p>
-          <p className="footer__location meta">
-            Cuddalore, Tamil Nadu, India &middot; IST (UTC+05:30)
+        <div className="df-footer__bottom">
+          <p className="df-footer__copyright">
+            &copy; {currentYear} Mohammed Shafiullah N. Built with React &amp; CSS.
           </p>
           <button
             type="button"
             onClick={scrollToTop}
-            className="footer__back-to-top meta"
+            className="df-footer__back-to-top"
             aria-label="Scroll back to top"
           >
-            Back to Top &uarr;
+            Back to top &uarr;
           </button>
         </div>
       </div>

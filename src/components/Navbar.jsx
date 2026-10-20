@@ -36,42 +36,61 @@ function Navbar() {
   const close = () => setMobileOpen(false);
 
   return (
-    <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`} role="banner">
-      <div className="nav__bar container">
-        <a href="#home" className="nav__wordmark" aria-label="Home">
-          Shafiullah<span className="nav__dot">.</span>
-        </a>
+    <header className={`df-nav-wrapper ${scrolled ? 'df-nav-wrapper--scrolled' : ''}`}>
+      <div className="container df-nav-container">
+        <nav className="df-nav" aria-label="Main Navigation">
+          {/* Logo / Name */}
+          <a href="#home" className="df-nav__logo" aria-label="Shafiullah Home">
+            <span className="df-nav__logo-icon">S</span>
+            <span className="df-nav__logo-text">Shafiullah</span>
+          </a>
 
-        <nav className="nav__links" aria-label="Primary navigation">
-          {NAV_LINKS.map(({ label, href }) => (
-            <a key={href} href={href} className="nav__link">{label}</a>
-          ))}
+          {/* Desktop Navigation Links */}
+          <div className="df-nav__links">
+            {NAV_LINKS.map(({ label, href }) => (
+              <a key={href} href={href} className="df-nav__link">
+                {label}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="df-nav__actions">
+            <a href="#contact" className="btn-pill-white df-nav__cta">
+              Let&rsquo;s talk
+            </a>
+            <button
+              type="button"
+              className="df-nav__toggle"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            >
+              {mobileOpen ? <IconClose size={20} /> : <IconMenu size={20} />}
+            </button>
+          </div>
         </nav>
-
-        <a href="mailto:shafyy.officials25@gmail.com" className="nav__cta">
-          Let&rsquo;s talk
-        </a>
-
-        <button
-          className="nav__toggle"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-        >
-          {mobileOpen ? <IconClose /> : <IconMenu />}
-        </button>
       </div>
 
-      {/* Mobile */}
-      {mobileOpen && <div className="nav__scrim" onClick={close} aria-hidden="true" />}
-      <div className={`nav__drawer ${mobileOpen ? 'nav__drawer--open' : ''}`} role="dialog" aria-modal="true">
-        {NAV_LINKS.map(({ label, href }) => (
-          <a key={href} href={href} className="nav__drawer-link" onClick={close}>{label}</a>
-        ))}
-        <hr className="rule" />
-        <a href="mailto:shafyy.officials25@gmail.com" className="nav__drawer-link nav__drawer-link--accent" onClick={close}>
-          Let&rsquo;s talk →
-        </a>
+      {/* Mobile Drawer */}
+      {mobileOpen && <div className="df-nav__scrim" onClick={close} />}
+      <div className={`df-nav__drawer ${mobileOpen ? 'df-nav__drawer--open' : ''}`}>
+        <div className="df-nav__drawer-header">
+          <span className="df-nav__logo-text">Shafiullah</span>
+          <button type="button" onClick={close} className="df-nav__drawer-close">
+            <IconClose size={20} />
+          </button>
+        </div>
+        <div className="df-nav__drawer-links">
+          {NAV_LINKS.map(({ label, href }) => (
+            <a key={href} href={href} className="df-nav__drawer-link" onClick={close}>
+              {label}
+            </a>
+          ))}
+          <a href="#contact" className="btn-pill-white df-nav__drawer-btn" onClick={close}>
+            Let&rsquo;s talk
+          </a>
+        </div>
       </div>
     </header>
   );
