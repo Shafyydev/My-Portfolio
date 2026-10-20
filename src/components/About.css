@@ -1,0 +1,106 @@
+/* ===========================
+   About Section
+   =========================== */
+.about {
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.about__header {
+  margin-bottom: var(--space-3xl);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.about__text {
+  font-size: var(--fs-lg);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+.about__text strong {
+  color: var(--text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.about__actions {
+  display: flex;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Highlight cards */
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.about__highlight-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.about__highlight-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.about__highlight-icon {
+  font-size: var(--fs-2xl);
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+}
+
+.about__highlight-title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.about__highlight-desc {
+  font-size: var(--fs-sm);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about__text {
+    font-size: var(--fs-base);
+  }
+}
