@@ -8,7 +8,7 @@ const PROJECTS = [
     description:
       'A personal website designed to present my profile, education, technical skills, and projects in a professional format.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Git', 'GitHub'],
-    repoUrl: null,
+    repoUrl: 'https://github.com/Shafyydev/My-Portfolio',
   },
   {
     title: 'Facial Recognition Attendance System',
