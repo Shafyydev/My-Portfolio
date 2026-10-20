@@ -40,9 +40,9 @@ function Navbar() {
       <div className="container df-nav-container">
         <nav className="df-nav" aria-label="Main Navigation">
           {/* Logo / Name */}
-          <a href="#home" className="df-nav__logo" aria-label="Shafiullah Home">
-            <span className="df-nav__logo-icon">S</span>
-            <span className="df-nav__logo-text">Shafiullah</span>
+          <a href="#home" className="df-nav__logo" aria-label="Portfolio Home">
+            <span className="df-nav__logo-icon">P</span>
+            <span className="df-nav__logo-text">Portfolio</span>
           </a>
 
           {/* Desktop Navigation Links */}
@@ -76,7 +76,7 @@ function Navbar() {
       {mobileOpen && <div className="df-nav__scrim" onClick={close} />}
       <div className={`df-nav__drawer ${mobileOpen ? 'df-nav__drawer--open' : ''}`}>
         <div className="df-nav__drawer-header">
-          <span className="df-nav__logo-text">Shafiullah</span>
+          <span className="df-nav__logo-text">Portfolio</span>
           <button type="button" onClick={close} className="df-nav__drawer-close">
             <IconClose size={20} />
           </button>
