@@ -1,0 +1,104 @@
+/* ===========================
+   Contact Section
+   =========================== */
+.contact {
+  background: var(--bg-secondary);
+}
+
+.contact__header {
+  margin-bottom: var(--space-3xl);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.contact__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: pointer;
+}
+
+.contact__card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.contact__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.contact__card:hover .contact__card-icon {
+  transform: scale(1.1);
+}
+
+.contact__card-icon--email {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.contact__card-icon--github {
+  background: rgba(124, 106, 246, 0.1);
+  color: var(--accent-primary);
+}
+
+.contact__card-icon--linkedin {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.contact__card-title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.contact__card-value {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  word-break: break-all;
+}
+
+.contact__card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--accent-primary);
+  transition: gap var(--duration-fast);
+}
+
+.contact__card:hover .contact__card-action {
+  gap: var(--space-md);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 768px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
