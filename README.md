@@ -4,19 +4,19 @@ A modern, responsive personal portfolio website built with **React** and **Vite*
 
 ## About
 
-This portfolio presents my profile, education, technical skills, and projects in a professional format. It is designed for use when applying for software development internships.
+This portfolio presents my profile, education, technical skills, and projects in a professional format. Built with a sleek dark design language adapted from the Framer DesignFast template.
 
 ## Tech Stack
 
-- **React** — Component-based UI
-- **Vite** — Fast build tool and dev server
-- **CSS** — Custom design system with CSS variables
+- **React 19** — Component-based UI
+- **Vite 6** — Fast build tool and dev server
+- **CSS** — Custom design system with CSS variables (DesignFast theme)
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [Node.js](https://nodejs.org/) (`^18.0.0 || ^20.0.0 || >=22.0.0` — required by Vite 6)
 - npm (comes with Node.js)
 
 ### Installation
@@ -52,24 +52,40 @@ Output is written to the `dist/` directory.
 npm run preview
 ```
 
+### Linting
+
+```bash
+npm run lint
+```
+
+Runs ESLint to verify code quality and React Hook conventions.
+
 ## Deployment
 
-The `dist/` folder contains the production-ready static files. Deploy to any static hosting service:
+This project is configured for **GitHub Pages** deployment via GitHub Actions.
 
-- **GitHub Pages** — Push the `dist/` folder or use GitHub Actions
-- **Netlify** — Connect the repository and set build command to `npm run build`, publish directory to `dist`
-- **Vercel** — Import the repository; Vite is auto-detected
+- Every push to `main` triggers a CI workflow that runs linting, builds the bundle, and deploys to GitHub Pages automatically.
+- The live site is available at: **https://shafyydev.github.io/My-Portfolio/**
+- `vite.config.js` sets `base: '/My-Portfolio/'` for correct asset paths on the subpath.
 
 ## Project Structure
 
 ```
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
 ├── public/
+│   ├── attendance-preview.jpg
+│   ├── attendance-preview.webp
+│   ├── portfolio-preview.jpg
+│   ├── portfolio-preview.webp
 │   └── favicon.svg
 ├── src/
 │   ├── components/
 │   │   ├── About.jsx / About.css
 │   │   ├── Contact.jsx / Contact.css
 │   │   ├── Education.jsx / Education.css
+│   │   ├── FocusAreas.jsx / FocusAreas.css
 │   │   ├── Footer.jsx / Footer.css
 │   │   ├── Hero.jsx / Hero.css
 │   │   ├── Icons.jsx
@@ -79,15 +95,12 @@ The `dist/` folder contains the production-ready static files. Deploy to any sta
 │   ├── App.jsx / App.css
 │   ├── index.css
 │   └── main.jsx
+├── eslint.config.js
 ├── index.html
 ├── package.json
 └── vite.config.js
 ```
 
-## Configuration Required
-
-None. The project runs out of the box with no API keys or external service configuration.
-
-## License
+## Copyright
 
 © 2026 Mohammed Shafiullah N. All rights reserved.
