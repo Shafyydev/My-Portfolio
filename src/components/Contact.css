@@ -1,9 +1,14 @@
+.df-contact__header {
+  display: flex;
+  justify-content: center;
+}
+
 .df-contact__banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
+  padding: clamp(2.5rem, 5vw, 3.75rem) clamp(1.5rem, 3.5vw, 2.75rem);
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-card);
@@ -35,7 +40,7 @@
   line-height: 1.65;
   color: var(--text-muted);
   max-width: 640px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .df-contact__desc strong {
@@ -81,7 +86,7 @@
 }
 
 .df-contact__email-link:hover {
-  color: var(--blue-accent);
+  color: var(--blue-text);
 }
 
 .df-contact__email-actions {

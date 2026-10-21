@@ -1,14 +1,16 @@
 .df-hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-h) + 1.5rem) 0 4rem;
+  padding: calc(var(--nav-h) + 0.75rem) 0 4.5rem;
   background-color: var(--bg);
+  box-sizing: border-box;
 }
 
 /* 3D Perspective Grid Background (Framer DesignFast Style) */
@@ -107,7 +109,7 @@
   line-height: 1.7;
   color: var(--text-muted);
   max-width: 720px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.75rem;
 }
 
 .df-hero__actions {
@@ -121,7 +123,7 @@
 /* Scroll indicator */
 .df-hero__scroll-indicator {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: clamp(1.25rem, 2.5vh, 2rem);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -155,13 +157,37 @@
   }
 }
 
-@media (max-height: 750px) {
+@media (max-width: 640px) {
   .df-hero {
-    min-height: auto;
-    padding-top: calc(var(--nav-h) + 2rem);
-    padding-bottom: 3rem;
+    min-height: 580px;
+    padding-top: calc(var(--nav-h) + 0.5rem);
+    padding-bottom: 3.5rem;
+  }
+  .df-hero__title {
+    margin-bottom: 0.85rem;
+  }
+  .df-hero__desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.35rem;
   }
   .df-hero__scroll-indicator {
-    display: none;
+    bottom: 1rem;
+  }
+}
+
+@media (max-height: 580px) {
+  .df-hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: calc(var(--nav-h) + 1rem);
+    padding-bottom: 2.5rem;
+  }
+  .df-hero__scroll-indicator {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 1.5rem;
   }
 }

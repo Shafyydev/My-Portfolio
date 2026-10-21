@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .df-projects__list {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, 5vw, 4rem);
+  gap: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .df-project-card {
@@ -51,7 +51,7 @@
 .df-project-card__category {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--blue-accent);
+  color: var(--blue-text);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }

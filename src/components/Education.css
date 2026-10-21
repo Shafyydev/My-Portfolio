@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .df-education__card {
@@ -109,7 +109,7 @@
 .df-education__focus-index {
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--blue-accent);
+  color: var(--blue-text);
 }
 
 .df-education__focus-card strong {
