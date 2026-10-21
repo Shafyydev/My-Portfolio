@@ -15,8 +15,8 @@ function Footer() {
           {/* Brand */}
           <div className="df-footer__brand">
             <a href="#home" className="df-footer__logo">
-              <span className="df-footer__logo-icon">P</span>
-              <span className="df-footer__logo-text">Portfolio</span>
+              <span className="df-footer__logo-icon">S</span>
+              <span className="df-footer__logo-text">Shafiullah</span>
             </a>
             <p className="df-footer__role">
               Aspiring Full Stack Developer &middot; B.Sc. Artificial Intelligence
