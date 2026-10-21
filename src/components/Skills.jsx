@@ -26,6 +26,11 @@ const SKILL_GROUPS = [
     desc: 'Version tracking, branch workflows, and remote repository hosting.',
     skills: ['Git', 'GitHub'],
   },
+  {
+    category: 'Deployment & DevOps',
+    desc: 'Automated CI/CD pipelines, containerized environments, and Linux system management.',
+    skills: ['CI/CD', 'Docker', 'Linux'],
+  },
 ];
 
 function Skills() {
