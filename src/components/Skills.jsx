@@ -9,17 +9,17 @@ const SKILL_GROUPS = [
   {
     category: 'Frontend Development',
     desc: 'Creating responsive, accessible, component-driven user interfaces.',
-    skills: ['HTML5', 'CSS', 'JavaScript', 'React.js'],
+    skills: ['HTML5', 'CSS3', 'React.js'],
   },
   {
     category: 'Backend Development',
     desc: 'Server runtimes, HTTP routing, and backend application business logic.',
-    skills: ['Node.js', 'Python'],
+    skills: ['Node.js', 'Flask'],
   },
   {
     category: 'Database Systems',
     desc: 'Relational data modeling, table schemas, and structured query operations.',
-    skills: ['MySQL', 'PostgreSQL'],
+    skills: ['MySQL', 'PostgreSQL', 'SQLite'],
   },
   {
     category: 'Development Tooling',
@@ -72,13 +72,6 @@ function Skills() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Integrity Guarantee Strip */}
-        <div className="df-skills__integrity">
-          <span className="df-skills__integrity-text">
-            ✓ Verified academic &amp; independent stack &middot; Zero inflated metrics or placeholder claims
-          </span>
         </div>
       </div>
     </section>

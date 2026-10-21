@@ -1,4 +1,3 @@
-import { IconGitHub, IconLinkedIn, IconMail } from './Icons.jsx';
 import './Footer.css';
 
 function Footer() {
@@ -31,6 +30,7 @@ function Footer() {
             <span className="df-footer__nav-title">Navigation</span>
             <div className="df-footer__links">
               <a href="#home" className="df-footer__link">Home</a>
+              <a href="#focus" className="df-footer__link">Focus</a>
               <a href="#about" className="df-footer__link">About</a>
               <a href="#skills" className="df-footer__link">Skills</a>
               <a href="#projects" className="df-footer__link">Projects</a>
