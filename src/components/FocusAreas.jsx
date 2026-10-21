@@ -4,7 +4,7 @@ function FocusAreas() {
   return (
     <section id="focus" className="section df-focus" aria-label="Core Engineering Highlights">
       <div className="container">
-        <div className="section-header">
+        <div className="df-focus__header">
           <div className="section-badge">
             <span className="section-badge__dot" />
             <span>Core Competencies</span>
