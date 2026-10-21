@@ -19,7 +19,7 @@ function Footer() {
               <span className="df-footer__logo-text">Shafiullah</span>
             </a>
             <p className="df-footer__role">
-              Aspiring Full Stack Developer &middot; B.Sc. Artificial Intelligence
+              Full Stack Developer &middot; B.Sc. Artificial Intelligence
             </p>
             <p className="df-footer__college">
               St. Joseph&rsquo;s College of Arts and Science (Autonomous), Cuddalore (2024&ndash;2027)

@@ -14,7 +14,7 @@ function About() {
             Driven by AI foundations, engineering for the web.
           </h2>
           <p className="section-subtitle">
-            An aspiring developer building real-world software, exploring full-stack engineering,
+            A developer building real-world software, exploring full-stack engineering,
             and preparing for practical industry impact.
           </p>
         </div>
