@@ -5,7 +5,8 @@ const PROJECTS = [
   {
     title: 'Facial Recognition Attendance System',
     category: 'Desktop Computer Vision Application',
-    image: '/attendance-preview.jpg',
+    image: 'attendance-preview.jpg',
+    webpImage: 'attendance-preview.webp',
     description:
       'A desktop attendance application combining computer vision face detection with an embedded web dashboard. It registers students via live webcam capture, matches enrolled facial features in real-time, and logs verified attendance records in a local SQLite database.',
     features: [
@@ -22,13 +23,14 @@ const PROJECTS = [
   {
     title: 'Personal Developer Portfolio Website',
     category: 'Web Application & Design System',
-    image: '/portfolio-preview.jpg',
+    image: 'portfolio-preview.jpg',
+    webpImage: 'portfolio-preview.webp',
     description:
-      'A modern developer portfolio website engineered to showcase candidate capabilities, academic background, and technical projects for software development internship applications. Rebuilt using DesignFast’s sleek Framer design language.',
+      'A modern developer portfolio website engineered to showcase technical capabilities, academic background, and projects. Rebuilt using the sleek Framer DesignFast design language.',
     features: [
       'Sleek dark design language adapted from the Framer DesignFast template',
       'Fully responsive layouts engineered for desktop, tablet, and mobile',
-      'Interactive 1-click clipboard copy, accessible mobile navigation drawer',
+      'Accessible mobile navigation drawer with focus trapping and keyboard support',
       'Zero bloated third-party UI component libraries — clean, modular CSS',
     ],
     technologies: ['React.js', 'JavaScript', 'CSS3', 'Vite', 'Git', 'GitHub'],
@@ -61,12 +63,20 @@ function Projects() {
             <article className="df-card df-project-card" key={project.title}>
               {/* Media Preview */}
               <div className="df-project-card__media">
-                <img
-                  src={project.image}
-                  alt={`${project.title} interface preview`}
-                  className="df-project-card__img"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcSet={`${import.meta.env.BASE_URL}${project.webpImage}`}
+                    type="image/webp"
+                  />
+                  <img
+                    src={`${import.meta.env.BASE_URL}${project.image}`}
+                    alt={`${project.title} interface preview`}
+                    className="df-project-card__img"
+                    loading="lazy"
+                    width="800"
+                    height="450"
+                  />
+                </picture>
               </div>
 
               {/* Content */}
@@ -81,7 +91,7 @@ function Projects() {
                   <ul className="df-project-card__features-list">
                     {project.features.map((feat) => (
                       <li key={feat} className="df-project-card__feature-item">
-                        <span className="df-project-card__bullet">✓</span>
+                        <span className="df-project-card__bullet">{'\u2713'}</span>
                         <span>{feat}</span>
                       </li>
                     ))}
