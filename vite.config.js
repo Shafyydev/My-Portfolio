@@ -3,11 +3,16 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/My-Portfolio/',
   server: {
     port: 5173,
-    open: true
   },
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+    sourcemap: false,
+    target: 'es2020',
+  },
+  preview: {
+    port: 4173,
+  },
 });
