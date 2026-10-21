@@ -3,19 +3,40 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Personal developer portfolio website for Mohammed Shafiullah N — Full Stack Developer & B.Sc. AI student.",
+  "author": "Mohammed Shafiullah N",
+  "homepage": "https://shafyydev.github.io/My-Portfolio/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shafyydev/My-Portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "full-stack",
+    "developer"
+  ],
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitejs/plugin-react": "^4.4.1",
-    "vite": "^6.3.5",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2"
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "vite": "^6.3.5"
   }
 }
