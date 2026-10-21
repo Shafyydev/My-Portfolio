@@ -1,36 +1,63 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IconMail, IconGitHub, IconLinkedIn, IconCheck, IconExternalLink } from './Icons.jsx';
 import './Contact.css';
 
 function Contact() {
-  const [copied, setCopied] = useState(false);
+  const [copyState, setCopyState] = useState('idle'); // 'idle' | 'copied' | 'failed'
   const email = 'shafyy.officials25@gmail.com';
+  const timerRef = useRef(null);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  const handleCopy = async () => {
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        // Fallback for non-secure contexts
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.setAttribute('readonly', '');
+        textarea.style.cssText = 'position:fixed;left:-9999px;opacity:0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopyState('copied');
+    } catch {
+      setCopyState('failed');
+    }
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setCopyState('idle'), 2500);
   };
 
   return (
     <section id="contact" className="section df-contact" aria-label="Contact Information">
       <div className="container">
-        {/* DesignFast Large CTA Banner */}
-        <div className="df-card df-contact__banner">
-          <div className="df-contact__glow" aria-hidden="true" />
-
+        {/* Section Badge at the top */}
+        <div className="df-contact__header">
           <div className="section-badge">
             <span className="section-badge__dot" />
             <span>Get in Touch</span>
           </div>
+        </div>
+
+        {/* Contact Banner Card */}
+        <div className="df-card df-contact__banner">
+          <div className="df-contact__glow" aria-hidden="true" />
 
           <h2 className="df-contact__title">
             Let&rsquo;s build something exceptional together.
           </h2>
 
           <p className="df-contact__desc">
-            Currently seeking a <strong>Software Development Internship</strong> for 2025/2026.
-            If you have an internship opening, feedback on my projects, or want to discuss full-stack engineering,
+            Currently seeking a <strong>Software Development Internship</strong> for 2026/2027.
+            If you have an opening, feedback on my projects, or want to discuss full-stack engineering,
             reach out directly through any of the channels below.
           </p>
 
@@ -52,17 +79,22 @@ function Contact() {
                 type="button"
                 onClick={handleCopy}
                 className="btn-pill-dark df-contact__copy-btn"
-                aria-live="polite"
               >
-                {copied ? (
+                {copyState === 'copied' ? (
                   <>
                     <IconCheck size={16} />
                     <span>Copied!</span>
                   </>
+                ) : copyState === 'failed' ? (
+                  <span>Copy failed — select manually</span>
                 ) : (
                   <span>Copy Address</span>
                 )}
               </button>
+              <span role="status" aria-live="polite" className="sr-only">
+                {copyState === 'copied' ? 'Email address copied to clipboard' : ''}
+                {copyState === 'failed' ? 'Failed to copy email address' : ''}
+              </span>
             </div>
           </div>
 
@@ -103,7 +135,7 @@ function Contact() {
 
           {/* Location & Status Notice */}
           <div className="df-contact__location-notice">
-            <span>&bull; Based in Cuddalore, Tamil Nadu, India &middot; Open to remote, hybrid, and on-site internship positions</span>
+            <span>&bull; Based in Cuddalore, Tamil Nadu, India &middot; Open to remote, hybrid, and on-site positions</span>
           </div>
         </div>
       </div>
