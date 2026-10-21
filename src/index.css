@@ -121,8 +121,7 @@ ul, ol {
 }
 
 .section {
-  padding-top: clamp(1rem, 1.5vw, 1.35rem);
-  padding-bottom: clamp(1.35rem, 2vw, 1.85rem);
+  padding: clamp(2.25rem, 4.5vw, 3.5rem) 0;
   position: relative;
 }
 
@@ -141,7 +140,7 @@ ul, ol {
   font-weight: 500;
   color: var(--text-muted);
   width: fit-content;
-  margin-bottom: clamp(1.75rem, 2.75vw, 2.35rem);
+  margin-bottom: clamp(1.35rem, 2.5vw, 2rem);
   transition: border-color 0.2s ease;
 }
 
@@ -158,16 +157,17 @@ ul, ol {
 }
 
 .section-title {
-  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.035em;
   color: var(--text-white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  text-wrap: balance;
 }
 
 .section-subtitle {
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
   line-height: 1.6;
   color: var(--text-muted);
   max-width: 640px;
@@ -242,6 +242,42 @@ ul, ol {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+/* ===========================
+   Mobile Responsive Utilities
+   =========================== */
+@media (max-width: 640px) {
+  :root {
+    --gutter: 1rem;
+    --nav-h: 60px;
+  }
+
+  .section {
+    padding: 2.25rem 0;
+  }
+
+  .section-badge {
+    margin-bottom: 1.15rem;
+    font-size: 0.775rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 6.5vw, 2.15rem);
+    line-height: 1.16;
+    margin-bottom: 0.65rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.925rem;
+    line-height: 1.55;
+  }
+
+  .df-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+}
 
 /* ===========================
    Reduced Motion

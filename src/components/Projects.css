@@ -143,6 +143,35 @@
 @media (max-width: 960px) {
   .df-project-card {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .df-project-card {
+    padding: 1.15rem;
+    gap: 1.25rem;
+  }
+  .df-project-card__title {
+    font-size: 1.35rem;
+  }
+  .df-project-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+  .df-project-card__features {
+    padding: 0.85rem 1rem;
+  }
+  .df-project-card__feature-item {
+    font-size: 0.8125rem;
+  }
+  .df-project-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+  .df-project-card__btn {
+    width: 100%;
+    justify-content: center;
   }
 }

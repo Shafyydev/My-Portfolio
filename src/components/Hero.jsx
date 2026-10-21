@@ -14,7 +14,7 @@ function Hero() {
         {/* Top Centered Header */}
         <div className="df-hero__header">
           <h1 className="df-hero__title">
-            Mohammed Shafiullah N
+            Mohammed Shafiullah&nbsp;N
             <span className="df-hero__role">
               Full Stack Developer &amp; AI Student
             </span>

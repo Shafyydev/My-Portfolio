@@ -131,8 +131,32 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+  .df-education__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+  }
+  .df-education__body {
+    gap: 1rem;
+  }
+  .df-education__degree {
+    font-size: 1.35rem;
+  }
+  .df-education__institution {
+    font-size: 0.95rem;
+  }
+  .df-education__summary {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
   .df-education__focus-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+  .df-education__focus-card {
+    padding: 1rem;
   }
 }

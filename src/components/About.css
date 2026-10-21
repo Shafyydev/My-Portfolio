@@ -116,5 +116,28 @@
 @media (max-width: 860px) {
   .df-about__grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .df-about__card-heading {
+    font-size: 1.2rem;
+  }
+  .df-about__text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .df-about__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .df-about__actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+  .df-about__spec-value {
+    font-size: 0.875rem;
   }
 }

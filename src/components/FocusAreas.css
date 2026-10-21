@@ -208,8 +208,29 @@
 @media (max-width: 960px) {
   .df-focus__bento {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
   .df-focus__bento-card {
     min-height: auto;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .df-focus__card-title {
+    font-size: 1.15rem;
+  }
+  .df-focus__card-desc {
+    font-size: 0.875rem;
+  }
+  .df-focus__widget-graph {
+    padding: 1rem;
+  }
+  .df-focus__activity-item {
+    padding: 0.65rem 0.85rem;
+  }
+  .df-focus__chat-text {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
   }
 }
