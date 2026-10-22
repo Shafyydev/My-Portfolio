@@ -110,9 +110,9 @@ function Navbar() {
       <div className="container df-nav-container">
         <nav className="df-nav" aria-label="Main Navigation">
           {/* Logo / Name */}
-          <a href="#home" className="df-nav__logo" aria-label="Shafiullah Home">
+          <a href="#home" className="df-nav__logo" aria-label="Portfolio Home">
             <span className="df-nav__logo-icon">S</span>
-            <span className="df-nav__logo-text">Shafiullah</span>
+            <span className="df-nav__logo-text">Portfolio</span>
           </a>
 
           {/* Desktop Navigation Links */}
