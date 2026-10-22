@@ -120,7 +120,7 @@ ul, ol {
 }
 
 .section {
-  padding: clamp(2.25rem, 4.5vw, 3.5rem) 0;
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
   position: relative;
 }
 
@@ -139,7 +139,7 @@ ul, ol {
   font-weight: 500;
   color: var(--text-muted);
   width: fit-content;
-  margin-bottom: clamp(1.35rem, 2.5vw, 2rem);
+  margin-bottom: clamp(1rem, 1.8vw, 1.35rem);
   transition: border-color 0.2s ease;
 }
 
@@ -252,11 +252,11 @@ ul, ol {
   }
 
   .section {
-    padding: 2.25rem 0;
+    padding: 1.15rem 0;
   }
 
   .section-badge {
-    margin-bottom: 1.15rem;
+    margin-bottom: 0.85rem;
     font-size: 0.775rem;
     padding: 0.3rem 0.8rem;
   }
