@@ -70,20 +70,6 @@
   border-color: rgba(255, 255, 255, 0.18);
 }
 
-.df-skills__integrity {
-  margin-top: 3rem;
-  padding: 1rem;
-  border-radius: var(--radius-inner);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  text-align: center;
-}
-
-.df-skills__integrity-text {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-}
-
 @media (max-width: 960px) {
   .df-skills__grid {
     grid-template-columns: repeat(2, 1fr);
