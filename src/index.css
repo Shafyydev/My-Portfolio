@@ -48,7 +48,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 1.5rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -122,6 +121,8 @@ ul, ol {
 .section {
   padding: 0.75rem 0;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 /* ===========================

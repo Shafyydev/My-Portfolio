@@ -19,9 +19,39 @@ function Navbar() {
   const wasOpenRef = useRef(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    // Smooth scroll for anchor clicks without forcing global scroll-behavior: smooth
+    const onAnchorClick = (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (anchor) {
+        const id = anchor.getAttribute('href');
+        if (id && id.length > 1) {
+          const target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState(null, '', id);
+          }
+        }
+      }
+    };
+    document.addEventListener('click', onAnchorClick);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('click', onAnchorClick);
+    };
   }, []);
 
   useEffect(() => {
