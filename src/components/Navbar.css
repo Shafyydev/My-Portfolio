@@ -178,7 +178,7 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .df-nav-wrapper {
     padding: 0.75rem 0;
   }
@@ -199,5 +199,11 @@
   .df-nav {
     padding: 0.45rem 0.65rem 0.45rem 1rem;
     gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .df-nav__links {
+    gap: 1.25rem;
   }
 }

@@ -30,8 +30,10 @@ function Navbar() {
       document.body.style.overflow = 'hidden';
 
       // Focus the close button when drawer opens
-      const closeBtn = drawerRef.current?.querySelector('.df-nav__drawer-close');
-      if (closeBtn) closeBtn.focus();
+      const focusTimer = setTimeout(() => {
+        const closeBtn = drawerRef.current?.querySelector('.df-nav__drawer-close');
+        if (closeBtn) closeBtn.focus();
+      }, 0);
 
       const onKey = (e) => {
         if (e.key === 'Escape') {
@@ -60,6 +62,7 @@ function Navbar() {
 
       document.addEventListener('keydown', onKey);
       return () => {
+        clearTimeout(focusTimer);
         document.body.style.overflow = '';
         document.removeEventListener('keydown', onKey);
       };
@@ -116,9 +119,9 @@ function Navbar() {
         ref={drawerRef}
         className={`df-nav__drawer ${mobileOpen ? 'df-nav__drawer--open' : ''}`}
         role="dialog"
-        aria-modal="true"
+        aria-modal={mobileOpen ? 'true' : undefined}
         aria-label="Navigation menu"
-        inert={mobileOpen ? undefined : ''}
+        inert={!mobileOpen}
       >
         <div className="df-nav__drawer-header">
           <span className="df-nav__logo-text">Shafiullah</span>
