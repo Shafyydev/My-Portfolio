@@ -10,6 +10,7 @@ This portfolio presents my profile, education, technical skills, and projects in
 
 - **React 19** — Component-based UI
 - **Vite 6** — Fast build tool and dev server
+- **ESLint** — Code quality and React Hooks linting
 - **CSS** — Custom design system with CSS variables (DesignFast theme)
 
 ## Getting Started
@@ -36,7 +37,7 @@ npm install
 npm run dev
 ```
 
-Opens the site at [http://localhost:5173](http://localhost:5173).
+Starts the local development server at [http://localhost:5173/](http://localhost:5173/) (or with custom base if `BASE_URL` is set).
 
 ### Production Build
 
@@ -52,6 +53,8 @@ Output is written to the `dist/` directory.
 npm run preview
 ```
 
+Previews the production build locally at [http://localhost:4173/](http://localhost:4173/).
+
 ### Linting
 
 ```bash
@@ -64,9 +67,10 @@ Runs ESLint to verify code quality and React Hook conventions.
 
 This project is configured for **GitHub Pages** deployment via GitHub Actions.
 
-- Every push to `main` triggers a CI workflow that runs linting, builds the bundle, and deploys to GitHub Pages automatically.
-- The live site is available at: **https://shafyydev.github.io/My-Portfolio/**
-- `vite.config.js` sets `base: '/My-Portfolio/'` for correct asset paths on the subpath.
+- **Prerequisites:** GitHub Pages must be enabled in the repository settings prior to the initial deployment: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+- **Automated CI/CD:** Every push to `main` triggers `.github/workflows/deploy.yml` which validates code quality with ESLint, builds the bundle with `BASE_URL=/My-Portfolio/`, and deploys to GitHub Pages automatically.
+- **Base URL Flexibility:** `vite.config.js` defines `base: process.env.BASE_URL || './'`. This default relative path allows the site to run out of the box at any root domain, Netlify, Vercel, or local preview, while CI explicitly sets `BASE_URL=/My-Portfolio/` for GitHub Pages repository sub-paths.
+- **Live URL:** The production portfolio is live at: **https://shafyydev.github.io/My-Portfolio/**
 
 ## Project Structure
 
