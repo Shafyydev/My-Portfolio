@@ -10,11 +10,25 @@ function Footer() {
   return (
     <footer className="df-footer" role="contentinfo">
       <div className="container">
-        <div className="df-footer__top">
-          {/* Links Column */}
-          <nav className="df-footer__nav" aria-label="Footer navigation">
-            <span className="df-footer__nav-title">Navigation</span>
-            <ul className="df-footer__links">
+        <div className="df-footer__grid">
+          {/* Brand Column */}
+          <div className="df-footer__col df-footer__col--brand">
+            <a href="#home" className="df-footer__brand-title" aria-label="Shafiullah Home">
+              SHAFIULLAH
+            </a>
+            <p className="df-footer__brand-tagline">
+              Engineering modern web systems, responsive user interfaces, and practical AI applications.
+            </p>
+            <div className="df-footer__status-badge">
+              <span className="df-footer__status-dot" aria-hidden="true" />
+              <span>Available for Internships &amp; Roles</span>
+            </div>
+          </div>
+
+          {/* Explore Column */}
+          <nav className="df-footer__col" aria-label="Explore navigation">
+            <span className="df-footer__heading">Explore</span>
+            <ul className="df-footer__list">
               <li><a href="#home" className="df-footer__link">Home</a></li>
               <li><a href="#focus" className="df-footer__link">Focus</a></li>
               <li><a href="#about" className="df-footer__link">About</a></li>
@@ -25,10 +39,24 @@ function Footer() {
             </ul>
           </nav>
 
-          {/* Connect Column */}
-          <nav className="df-footer__nav" aria-label="Social and contact links">
-            <span className="df-footer__nav-title">Connect</span>
-            <ul className="df-footer__links">
+          {/* Location & Inquiries Column */}
+          <div className="df-footer__col">
+            <span className="df-footer__heading">Location</span>
+            <p className="df-footer__text">
+              Cuddalore, Tamil Nadu<br />
+              India &middot; Remote &amp; Hybrid
+            </p>
+
+            <span className="df-footer__heading df-footer__heading--sub">Inquiries</span>
+            <a href="mailto:shafyy.officials25@gmail.com" className="df-footer__link df-footer__link--highlight">
+              shafyy.officials25@gmail.com
+            </a>
+          </div>
+
+          {/* Follow / Connect Column */}
+          <nav className="df-footer__col" aria-label="Social and connection links">
+            <span className="df-footer__heading">Connect</span>
+            <ul className="df-footer__list">
               <li>
                 <a
                   href="https://github.com/Shafyydev"
@@ -59,21 +87,33 @@ function Footer() {
               </li>
             </ul>
           </nav>
+
+          {/* Next / Action Column (Envoy Signature) */}
+          <div className="df-footer__col df-footer__col--action">
+            <span className="df-footer__heading">Next</span>
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="df-footer__next-btn"
+              aria-label="Scroll to top of page"
+            >
+              <span className="df-footer__next-text">Back to Top &uarr;</span>
+              <span className="df-footer__next-rule" aria-hidden="true" />
+            </button>
+            <a href="#contact" className="df-footer__contact-link">
+              Start a Conversation &rarr;
+            </a>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="df-footer__bottom">
           <p className="df-footer__copyright">
-            &copy; {currentYear} Mohammed Shafiullah N. Built with React &amp; CSS.
+            &copy; {currentYear} Mohammed Shafiullah N. All rights reserved.
           </p>
-          <button
-            type="button"
-            onClick={scrollToTop}
-            className="df-footer__back-to-top"
-            aria-label="Scroll back to top"
-          >
-            Back to top &uarr;
-          </button>
+          <p className="df-footer__meta">
+            B.Sc. Artificial Intelligence &middot; Full Stack Developer
+          </p>
         </div>
       </div>
     </footer>
