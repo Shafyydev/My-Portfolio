@@ -11,19 +11,6 @@ function Footer() {
     <footer className="df-footer" role="contentinfo">
       <div className="container">
         <div className="df-footer__top">
-          {/* Brand */}
-          <div className="df-footer__brand">
-            <a href="#home" className="df-footer__logo">
-              <span className="df-footer__logo-icon">S</span>
-              <span className="df-footer__logo-text">Shafiullah</span>
-            </a>
-            <p className="df-footer__role">
-              Full Stack Developer &middot; B.Sc. Artificial Intelligence
-            </p>
-            <p className="df-footer__college">
-              St. Joseph&rsquo;s College of Arts and Science (Autonomous), Cuddalore (2024&ndash;2027)
-            </p>
-          </div>
 
           {/* Links Column */}
           <div className="df-footer__nav">

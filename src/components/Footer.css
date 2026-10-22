@@ -5,55 +5,11 @@
 }
 
 .df-footer__top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   gap: clamp(2rem, 4vw, 4rem);
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.df-footer__brand {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.df-footer__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.df-footer__logo-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-
-.df-footer__logo-text {
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-}
-
-.df-footer__role {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.df-footer__college {
-  font-size: 0.825rem;
-  color: var(--text-faint);
-  line-height: 1.5;
-  max-width: 420px;
 }
 
 .df-footer__nav {
@@ -115,7 +71,7 @@
     padding: 2.25rem 0 1.5rem;
   }
   .df-footer__top {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.75rem;
   }
   .df-footer__bottom {
