@@ -16,7 +16,7 @@ function Hero() {
           <h1 className="df-hero__title">
             Mohammed Shafiullah&nbsp;N
             <span className="df-hero__role">
-              Full Stack Developer &amp; AI Student
+              Full Stack Developer
             </span>
           </h1>
 
