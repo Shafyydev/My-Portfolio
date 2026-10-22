@@ -73,8 +73,8 @@ function Projects() {
                     alt={`${project.title} interface preview`}
                     className="df-project-card__img"
                     loading="lazy"
-                    width="800"
-                    height="450"
+                    width="1376"
+                    height="768"
                   />
                 </picture>
               </div>
