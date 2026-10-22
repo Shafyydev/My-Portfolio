@@ -30,9 +30,6 @@ function Hero() {
             <a href="#projects" className="btn-pill-white">
               Explore Projects &rarr;
             </a>
-            <a href="#contact" className="btn-pill-dark">
-              Get in Touch
-            </a>
           </div>
         </div>
       </div>
