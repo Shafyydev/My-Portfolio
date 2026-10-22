@@ -180,11 +180,6 @@
   color: var(--text-faint);
 }
 
-.df-footer__meta {
-  font-size: 0.8125rem;
-  color: var(--text-faint);
-}
-
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .df-footer__grid {

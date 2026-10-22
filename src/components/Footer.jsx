@@ -88,9 +88,8 @@ function Footer() {
             </ul>
           </nav>
 
-          {/* Next / Action Column (Envoy Signature) */}
+          {/* Action Column (Envoy Signature) */}
           <div className="df-footer__col df-footer__col--action">
-            <span className="df-footer__heading">Next</span>
             <button
               type="button"
               onClick={scrollToTop}
@@ -110,9 +109,6 @@ function Footer() {
         <div className="df-footer__bottom">
           <p className="df-footer__copyright">
             &copy; {currentYear} Mohammed Shafiullah N. All rights reserved.
-          </p>
-          <p className="df-footer__meta">
-            B.Sc. Artificial Intelligence &middot; Full Stack Developer
           </p>
         </div>
       </div>
