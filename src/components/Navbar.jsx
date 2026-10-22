@@ -154,7 +154,7 @@ function Navbar() {
         inert={!mobileOpen}
       >
         <div className="df-nav__drawer-header">
-          <span className="df-nav__logo-text">Shafiullah</span>
+          <span className="df-nav__logo-text">Portfolio</span>
           <button type="button" onClick={close} className="df-nav__drawer-close" aria-label="Close menu">
             <IconClose size={20} />
           </button>
