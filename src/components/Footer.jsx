@@ -14,7 +14,7 @@ function Footer() {
           {/* Brand Column */}
           <div className="df-footer__col df-footer__col--brand">
             <a href="#home" className="df-footer__brand-title" aria-label="Shafiullah Home">
-              SHAFIULLAH
+              MOHAMMED SHAFIULLAH N
             </a>
             <p className="df-footer__brand-tagline">
               Engineering modern web systems, responsive user interfaces, and practical AI applications.
@@ -47,9 +47,9 @@ function Footer() {
               India &middot; Remote &amp; Hybrid
             </p>
 
-            <span className="df-footer__heading df-footer__heading--sub">Inquiries</span>
+            <span className="df-footer__heading df-footer__heading--sub">Enquiries</span>
             <a href="mailto:shafyy.officials25@gmail.com" className="df-footer__link df-footer__link--highlight">
-              shafyy.officials25@gmail.com
+            shafyy.officials25@gmail.com
             </a>
           </div>
 
@@ -99,9 +99,6 @@ function Footer() {
               <span className="df-footer__next-text">Back to Top &uarr;</span>
               <span className="df-footer__next-rule" aria-hidden="true" />
             </button>
-            <a href="#contact" className="df-footer__contact-link">
-              Start a Conversation &rarr;
-            </a>
           </div>
         </div>
 
