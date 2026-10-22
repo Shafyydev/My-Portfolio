@@ -204,7 +204,7 @@
     align-items: stretch;
     gap: 0.5rem;
   }
-  .df-contact__email-actions > * {
+  .df-contact__email-actions > *:not(.sr-only) {
     width: 100%;
     justify-content: center;
   }

@@ -13,25 +13,36 @@ function Contact() {
     };
   }, []);
 
-  const handleCopy = async () => {
+  const copyFallback = (text) => {
     try {
-      if (navigator?.clipboard?.writeText) {
-        await navigator.clipboard.writeText(email);
-      } else {
-        // Fallback for non-secure contexts
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        textarea.setAttribute('readonly', '');
-        textarea.style.cssText = 'position:fixed;left:-9999px;opacity:0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
-      setCopyState('copied');
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.cssText = 'position:fixed;left:-9999px;opacity:0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      const success = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return success;
     } catch {
-      setCopyState('failed');
+      return false;
     }
+  };
+
+  const handleCopy = async () => {
+    let success;
+    if (navigator?.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(email);
+        success = true;
+      } catch {
+        success = copyFallback(email);
+      }
+    } else {
+      success = copyFallback(email);
+    }
+
+    setCopyState(success ? 'copied' : 'failed');
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => setCopyState('idle'), 2500);
   };
