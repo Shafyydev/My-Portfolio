@@ -71,5 +71,5 @@ I believe in learning through implementation, improving through consistent pract
 ---
 
 <p align="center">
-  <sub>Designed and developed by Muhammad Shafiyullah.</sub>
+  <sub>Designed and developed by Muhammad Shafiullah.</sub>
 </p>
