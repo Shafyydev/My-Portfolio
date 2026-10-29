@@ -1,110 +1,90 @@
-# Mohammed Shafiullah N — Portfolio
+# Muhammad Shafiullah — Developer Portfolio
 
-A modern, responsive personal portfolio website built with **React** and **Vite**.
+\<p align="center">
+&#x20; \<strong>A personal portfolio showcasing my skills, projects, and journey in software development.\</strong>
+\</p>
 
-## About
+\<p align="center">
+&#x20; \<a href="[https://shafiullah-portfolio-teal.vercel.app/](https://shafiullah-portfolio-teal.vercel.app/)">\<strong>View Live Portfolio\</strong>\</a>
+&#x20; &nbsp; · &nbsp;
+&#x20; \<a href="[https://github.com/Shafyydev](https://github.com/Shafyydev)">GitHub\</a>
+&#x20; &nbsp; · &nbsp;
+&#x20; \<a href="[https://www.linkedin.com/in/shafyy/](https://www.linkedin.com/in/shafyy/)">LinkedIn\</a>
+\</p>
 
-This portfolio presents my profile, education, technical skills, and projects in a professional format. Built with a sleek dark design language adapted from the Framer DesignFast template.
+\<p align="center">
+&#x20; \<img src="[https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black](https://img.shields.io/badge/React-19-61DAFB?logo=react\&logoColor=black)" alt="React 19" />
+&#x20; \<img src="[https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white](https://img.shields.io/badge/Vite-6-646CFF?logo=vite\&logoColor=white)" alt="Vite 6" />
+&#x20; \<img src="[https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript\&logoColor=black)" alt="JavaScript" />
+&#x20; \<img src="[https://img.shields.io/badge/CSS3-Styling-1572B6?logo=css3&logoColor=white](https://img.shields.io/badge/CSS3-Styling-1572B6?logo=css3\&logoColor=white)" alt="CSS3" />
+\</p>
 
-## Tech Stack
+---
 
-- **React 19** — Component-based UI
-- **Vite 6** — Fast build tool and dev server
-- **ESLint** — Code quality and React Hooks linting
-- **CSS** — Custom design system with CSS variables (DesignFast theme)
+## Overview
 
-## Getting Started
+This is my personal developer portfolio, created to present my background, technical skills, projects, and professional interests in one place.
 
-### Prerequisites
+I am a B.Sc. Artificial Intelligence student working toward becoming a full-stack developer. This portfolio highlights my learning journey and practical work, providing recruiters, developers, and potential collaborators with a straightforward way to explore my profile and contact me.
 
-- [Node.js](https://nodejs.org/) (`^18.0.0 || ^20.0.0 || >=22.0.0` — required by Vite 6)
-- npm (comes with Node.js)
+## Portfolio Preview
 
-### Installation
+\<p align="center">
+&#x20; \<a href="[https://shafiullah-portfolio-teal.vercel.app/](https://shafiullah-portfolio-teal.vercel.app/)">
+&#x20;   \<img src="public/portfolio-preview\.webp" alt="Preview of my personal portfolio website" width="100%" />
+&#x20; \</a>
+\</p>
 
-```bash
-# Clone the repository
-git clone https://github.com/Shafyydev/My-Portfolio.git
-cd My-Portfolio
+\<p align="center">
+&#x20; \<a href="[https://shafiullah-portfolio-teal.vercel.app/](https://shafiullah-portfolio-teal.vercel.app/)">\<strong>Explore the Live Website →\</strong>\</a>
+\</p>
 
-# Install dependencies
-npm install
-```
+## Features
 
-### Development
+- **Personal Introduction** — An introduction to my background and development goals.
+- **About Me** — An overview of my interests and direction in software development.
+- **Education** — Information about my academic background.
+- **Technical Skills** — A presentation of the technologies and tools I work with.
+- **Project Showcase** — Selected projects demonstrating practical applications of my skills.
+- **Contact Links** — Direct ways to connect with me professionally.
+- **Component-Based Interface** — A React application organized into dedicated interface components.
+- **Custom Styling** — A consistent visual design implemented with CSS.
 
-```bash
-npm run dev
-```
+## Technology Stack
 
-Starts the local development server at [http://localhost:5173/](http://localhost:5173/) (or with custom base if `BASE_URL` is set).
-
-### Production Build
-
-```bash
-npm run build
-```
-
-Output is written to the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-Previews the production build locally at [http://localhost:4173/](http://localhost:4173/).
-
-### Linting
-
-```bash
-npm run lint
-```
-
-Runs ESLint to verify code quality and React Hook conventions.
+| Technology     | Purpose                                              |
+| -------------- | ---------------------------------------------------- |
+| React          | Building the user interface with reusable components |
+| Vite           | Frontend development and production build tooling    |
+| JavaScript     | Application logic and interactivity                  |
+| CSS3           | Layout and visual styling                            |
+| ESLint         | Code quality and lint checks                         |
+| Git and GitHub | Version control and source code hosting              |
+| GitHub Actions | Automated deployment workflow                        |
 
 ## Deployment
 
-This project is configured for **GitHub Pages** deployment via GitHub Actions.
+- **Live Portfolio:** [Visit My Website](https://shafiullah-portfolio-teal.vercel.app/)
+- **GitHub Repository:** [Shafyydev/My-Portfolio](https://github.com/Shafyydev/My-Portfolio)
+- **GitHub Pages:** [View GitHub Pages Deployment](https://shafyydev.github.io/My-Portfolio/)
 
-- **Prerequisites:** GitHub Pages must be enabled in the repository settings prior to the initial deployment: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-- **Automated CI/CD:** Every push to `main` triggers `.github/workflows/deploy.yml` which validates code quality with ESLint, builds the bundle with `BASE_URL=/My-Portfolio/`, and deploys to GitHub Pages automatically.
-- **Base URL Flexibility:** `vite.config.js` defines `base: process.env.BASE_URL || './'`. This default relative path allows the site to run out of the box at any root domain, Netlify, Vercel, or local preview, while CI explicitly sets `BASE_URL=/My-Portfolio/` for GitHub Pages repository sub-paths.
-- **Live URL:** The production portfolio is live at: **https://shafyydev.github.io/My-Portfolio/**
+The Vercel and GitHub Pages links represent separate deployment destinations. The Vercel link is the primary portfolio URL.
 
-## Project Structure
+## About Me
 
-```
-├── .github/
-│   └── workflows/
-│       └── deploy.yml
-├── public/
-│   ├── attendance-preview.jpg
-│   ├── attendance-preview.webp
-│   ├── portfolio-preview.jpg
-│   ├── portfolio-preview.webp
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── About.jsx / About.css
-│   │   ├── Contact.jsx / Contact.css
-│   │   ├── Education.jsx / Education.css
-│   │   ├── FocusAreas.jsx / FocusAreas.css
-│   │   ├── Footer.jsx / Footer.css
-│   │   ├── Hero.jsx / Hero.css
-│   │   ├── Icons.jsx
-│   │   ├── Navbar.jsx / Navbar.css
-│   │   ├── Projects.jsx / Projects.css
-│   │   └── Skills.jsx / Skills.css
-│   ├── App.jsx / App.css
-│   ├── index.css
-│   └── main.jsx
-├── eslint.config.js
-├── index.html
-├── package.json
-└── vite.config.js
-```
+I am a B.Sc. Artificial Intelligence student interested in software engineering and web development. My current goal is to strengthen my programming fundamentals, build practical projects, and progress toward full-stack development.
 
-## Copyright
+I use personal projects to apply what I learn, improve my problem-solving skills, and demonstrate my development progress.
 
-© 2026 Mohammed Shafiullah N. All rights reserved.
+## Connect With Me
+
+- **GitHub:** [@Shafyydev](https://github.com/Shafyydev)
+- **LinkedIn:** [Muhammad Shafiyullah](https://www.linkedin.com/in/shafyy/)
+- **Portfolio:** [Visit My Website](https://shafiullah-portfolio-teal.vercel.app/)
+- **Email:** [shafyy.officials25@gmail.com](mailto\:shafyy.officials25@gmail.com)
+
+---
+
+\<p align="center">
+&#x20; \<sub>Designed and developed by Muhammad Shafiyullah.\</sub>
+\</p>
