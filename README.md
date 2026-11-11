@@ -1,5 +1,5 @@
 
-# Muhammad Shafiullah N — Developer Portfolio
+# Mohammed Shafiullah N — Portfolio
 
 **A personal portfolio showcasing my skills, projects, and journey in software development.**
 
@@ -20,7 +20,7 @@ This portfolio presents my technical skills, educational background, projects, a
 
 ## Portfolio Preview
 
-![Muhammad Shafiullah's Developer Portfolio](public/portfolio-preview.png)
+![Mohammed Shafiullah's Developer Portfolio](public/portfolio-preview.png)
 
 **[Explore the Live Website →](https://shafiullah-portfolio-teal.vercel.app/)**
 
@@ -65,11 +65,11 @@ I believe in learning through implementation, improving through consistent pract
 
 - **Portfolio:** [shafiullah-portfolio-teal.vercel.app](https://shafiullah-portfolio-teal.vercel.app/)
 - **GitHub:** [@Shafyydev](https://github.com/Shafyydev)
-- **LinkedIn:** [Muhammad Shafiullah](https://www.linkedin.com/in/shafyy/)
+- **LinkedIn:** [Mohammed Shafiullah](https://www.linkedin.com/in/shafyy/)
 - **Email:** [shafyy.officials25@gmail.com](mailto:shafyy.officials25@gmail.com)
 
 ---
 
 <p align="center">
-  <sub>Designed and developed by Muhammad Shafiullah.</sub>
+  <sub>Designed and developed by Mohammed Shafiullah.</sub>
 </p>
